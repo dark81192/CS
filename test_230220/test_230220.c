@@ -39,7 +39,16 @@ void px(int arr[], int l)
 
 int main()
 {
-	int arr[] = { 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 };
+	int arr[] = { 0 };
+	int a = 0;
+
+	do {
+
+		scanf("%d", &arr[a]);
+		a++;
+
+	} while (arr[a] != '\0');
+
 	int l = (sizeof(arr)) / sizeof(arr[0]);
 
 	px(arr, l);
