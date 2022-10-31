@@ -1,0 +1,3 @@
+﻿  calculate.c
+D:\clang\2022\CS\calculate\calculate.c(19,1): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+  calculate.vcxproj -> D:\clang\2022\CS\calculate\Debug\calculate.exe
