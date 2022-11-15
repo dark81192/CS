@@ -4,14 +4,14 @@
 
 int result(int x, int y)
 {
-	int z;
-	if (x > y)
-	{
-		z = x;
-	}
-	else {
-		z = y;
-	}
+	int z = x > y ? x : y;
+	//if (x > y)
+	//{
+	//	z = x;
+	//}
+	//else {
+	//	z = y;
+	//}
 	return z;
 }
 
