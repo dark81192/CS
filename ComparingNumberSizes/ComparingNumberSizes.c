@@ -20,7 +20,7 @@ int main()
 	int x, y;
 	printf("Please enter two integers:>");
 	scanf("%d %d", &x, &y);
-	int s = result(x,y);
+	int s = result(x, y);
 	printf("%d\n", s);
 	return 0;
 }
