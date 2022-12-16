@@ -4,6 +4,10 @@
 #include <time.h>
 #include <stdlib.h>
 
+void des()
+{
+	printf("数字炸弹\n现在来开始游戏吧！\n现在已经有一个1-100的随机数了.\n输入你猜的数字:>");
+}
 
 int main()
 {
@@ -11,7 +15,7 @@ int main()
 	int r = rand() %100;
 	int xnum = 0, i, j = 1;
 
-	printf("数字炸弹\n现在来开始游戏吧！\n现在已经有一个1-100的随机数了.\n输入你猜的数字:>");
+	des();
 
 	for (i = 0; i != 2; j++)
 	{
@@ -22,7 +26,7 @@ int main()
 			system("cls");
 			r = rand() % 100;
 			if (i != 2)
-				printf("数字炸弹\n现在来开始游戏吧！\n现在已经有一个1-100的随机数了.\n输入你猜的数字:>");
+				des();
 		}
 		else if (xnum < r) {
 			printf("这个数字比正确数字小了\n再猜一次:>");
