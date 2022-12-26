@@ -6,6 +6,7 @@ extern void Multipleofthree();
 extern void commonDivisor();
 extern void runyear();
 extern void primeNumber();
+extern void shutdown_func();
 
 void menu()
 {
@@ -13,6 +14,7 @@ void menu()
 	printf("2.打印两个数的最大公约数\n");
 	printf("3.打印1000-2000年间的所有闰年\n");
 	printf("4.打印100-200间的所有素数\n");
+	printf("5.关机小程序\n");
 }
 
 int main()
@@ -33,6 +35,9 @@ int main()
 		break;
 	case 4:
 		primeNumber();
+		break;
+	case 5:
+		shutdown_func();
 		break;
 	default:
 		printf("input error\n");
