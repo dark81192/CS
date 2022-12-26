@@ -1,8 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS 1
-
-#include <stdio.h>
-
-int main()
+void Multipleofthree()
 {
 	//1-100之间所有三的倍数
 	int t = 3, i = 1;
@@ -11,5 +7,4 @@ int main()
 		if (i % t == 0)
 			printf("%d ", i);
 	}
-	return 0;
 }
