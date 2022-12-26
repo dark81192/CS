@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 void Multipleofthree()
 {
 	//1-100之间所有三的倍数
