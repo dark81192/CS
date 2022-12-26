@@ -8,7 +8,7 @@ extern void commonDivisor();
 void menu()
 {
 	printf("1.打印1-100之间三的倍数\n");
-	printf("2.打印20,40的最大公约数\n");
+	printf("2.打印两个数的最大公约数\n");
 }
 
 int main()
