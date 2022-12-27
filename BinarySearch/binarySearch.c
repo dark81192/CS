@@ -12,13 +12,13 @@ int binsearch(int x, int arr[], int len)
 			left = mid + 1;
 		if (arr[mid] == search)
 		{
-			printf("%d µÄÏÂ±êÊÇ: %d\n", search, mid);
+			printf("%d çš„ä¸‹æ ‡æ˜¯: %d\n", search, mid);
 			break;
 		}
 		len--;
 		if (len == 0)
 		{
-			printf("Ã»ÓĞĞèÒª²éÕÒµÄÖµ");
+			printf("æ²¡æœ‰éœ€è¦æŸ¥æ‰¾çš„å€¼");
 			break;
 		}
 	}
@@ -29,8 +29,8 @@ int main()
 {
 	int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 	int len = sizeof(arr) / sizeof(arr[0]);
-	int search = 6;	//ĞèÒª²éÕÒµÄÊı×Ö
-	int left = 0;	//×óÏÂ±ê
+	int search = 6;
+	int left = 0;
 	int right = len - 1;
 	int mid;
 	
