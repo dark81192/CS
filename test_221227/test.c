@@ -31,9 +31,7 @@ char determine(int a)
 
 int leapYear(int x)
 {
-	if (x % 4 == 0 && x % 100 != 0 || x % 400 == 0)
-		return 1;
-	return 0;
+	return ((x % 4 == 0 && x % 100 != 0) || x % 400 == 0);
 }
 
 int find_func(int arr1[], int size, int goal)
@@ -55,7 +53,7 @@ int find_func(int arr1[], int size, int goal)
 
 void count_func(int* p)
 {
-	*p += 1;
+	(*p)++;
 }
 
 int main()
