@@ -3,12 +3,14 @@
 #include <stdio.h>
 #include "dec_num.h"
 #include "my_strlen.h"
+#include "factorial.h"
 
 int main()
 {
 	int option;
 	printf("1.递归打印分解数字\n");
 	printf("2.递归判断字符数组长度\n");
+	printf("3.递归n的阶乘\n");
 	scanf("%d", &option);
 	switch (option)
 	{
@@ -17,6 +19,9 @@ int main()
 		break;
 	case 2:
 		my_strlen();
+		break;
+	case 3:
+		factorial();
 		break;
 	default:
 		break;
