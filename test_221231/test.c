@@ -4,6 +4,7 @@
 #include "dec_num.h"
 #include "my_strlen.h"
 #include "factorial.h"
+#include "fib.h"
 
 int main()
 {
@@ -11,6 +12,8 @@ int main()
 	printf("1.递归打印分解数字\n");
 	printf("2.递归判断字符数组长度\n");
 	printf("3.递归n的阶乘\n");
+	printf("4.递归求第n个斐切那波数(递归迭代方式有缺陷速度较慢，使用循环相对合适)：\n");
+	printf("5.循环求第n个斐切那波数：\n");
 	scanf("%d", &option);
 	switch (option)
 	{
@@ -22,6 +25,12 @@ int main()
 		break;
 	case 3:
 		factorial();
+		break;
+	case 4:
+		fib_rec();
+		break;
+	case 5:
+		fib_l();
 		break;
 	default:
 		break;
