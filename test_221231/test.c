@@ -6,6 +6,7 @@
 #include "factorial.h"
 #include "fib.h"
 #include "hannotTower.h"
+#include "fog.h"
 
 int main()
 {
@@ -16,6 +17,7 @@ int main()
 	printf("4.递归求第n个斐切那波数(递归迭代方式有缺陷速度较慢，使用循环相对合适)\n");
 	printf("5.循环求第n个斐切那波数\n");
 	printf("6.递归求诺塔\n");
+	printf("7.递归青蛙跳台阶跳法次数\n");
 	scanf("%d", &option);
 	switch (option)
 	{
@@ -36,6 +38,9 @@ int main()
 		break;
 	case 6:
 		hntower();
+		break;
+	case 7:
+		fog();
 		break;
 	default:
 		break;
