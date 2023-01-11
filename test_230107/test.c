@@ -54,12 +54,35 @@ void find_max()
 	printf("max = %d \n", max);
 }
 
+void mul_table()
+{
+	int a = 1;
+	int b = 1;
+	mul(a, b);
+}
+
+int mul(int a, int b)
+{
+	if (b < a && a < 10 && b < 10)
+	{
+		printf("%d*%d=%d ", a, b, a * b);
+		mul(a, b + 1);
+	}
+	else if (b == a)
+	{
+		printf("%d*%d=%d\n", a, b, a * b);
+		mul(a + 1, 1);
+	}	
+}
+
 int main()
 {
 	int o = 0;
 
 	printf("1.1-100之间9出现的次数\n");
 	printf("2.1/1+1/2+1/3+......+1/100的值\n");
+	printf("3.比较输入的10位整数大小\n");
+	printf("4.输出99乘法表\n");
 
 	scanf("%d", &o);
 	
@@ -75,6 +98,10 @@ int main()
 
 	case 3:
 		find_max();
+		break;
+
+	case 4:
+		mul_table();
 		break;
 
 	default:
