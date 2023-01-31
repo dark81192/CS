@@ -2,6 +2,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 void n_count()
 {
@@ -46,12 +47,26 @@ void find_max()
 
 	int max = arr1[0];
 
-	for (i = 0; i < 10; i++)
+	for (i = 1; i < 10; i++)
 	{
 		if (max < arr1[i]) max = arr1[i];
 	}
 
 	printf("max = %d \n", max);
+}
+
+void mul(int a, int b)
+{
+	if (b < a && a < 10 && b < 10)
+	{
+		printf("%d*%d=%-2d ", a, b, a * b);
+		mul(a, b + 1);
+	}
+	else if (b == a)
+	{
+		printf("%d*%d=%-2d\n", a, b, a * b);
+		mul(a + 1, 1);
+	}	
 }
 
 void mul_table()
@@ -61,18 +76,35 @@ void mul_table()
 	mul(a, b);
 }
 
-int mul(int a, int b)
+void guess_number()
 {
-	if (b < a && a < 10 && b < 10)
-	{
-		printf("%d*%d=%d ", a, b, a * b);
-		mul(a, b + 1);
-	}
-	else if (b == a)
-	{
-		printf("%d*%d=%d\n", a, b, a * b);
-		mul(a + 1, 1);
-	}	
+	int n = 0;
+	int r = rand() % 100 + 1;
+
+	printf("猜数字游戏\n");
+	printf("现在有一个随机数x了（1-100）\n");
+	printf("请猜数字：>");
+
+	do {
+		scanf("%d", &n);
+
+		if (r == n)
+		{
+			printf("success!\n");
+			break;
+		}
+		else if (r < n)
+		{
+			printf("Too big!\n");
+			printf("请猜数字：>");
+		}
+		else
+		{
+			printf("Small!\n");
+			printf("请猜数字：>");
+		}
+	} while (1);
+
 }
 
 int main()
@@ -83,6 +115,7 @@ int main()
 	printf("2.1/1+1/2+1/3+......+1/100的值\n");
 	printf("3.比较输入的10位整数大小\n");
 	printf("4.输出99乘法表\n");
+	printf("5.猜数字游戏\n");
 
 	scanf("%d", &o);
 	
@@ -102,6 +135,11 @@ int main()
 
 	case 4:
 		mul_table();
+		break;
+
+	case 5:
+		srand((unsigned)time(NULL));
+		guess_number();
 		break;
 
 	default:
