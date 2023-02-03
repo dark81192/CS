@@ -107,6 +107,16 @@ void guess_number()
 
 }
 
+void ppnumbers()
+{
+	int i = 0;
+	for (i = 100; i < 200; i++)
+	{
+		if (i % 3 != 0 && i % 5 != 0 && i % 7 != 0 && i % 2 != 0)
+			printf("%d ", i);
+	}
+}
+
 int main()
 {
 	int o = 0;
@@ -116,6 +126,7 @@ int main()
 	printf("3.比较输入的10位整数大小\n");
 	printf("4.输出99乘法表\n");
 	printf("5.猜数字游戏\n");
+	printf("6.打印100-200之间的素数\n");
 
 	scanf("%d", &o);
 	
@@ -140,6 +151,10 @@ int main()
 	case 5:
 		srand((unsigned)time(NULL));
 		guess_number();
+		break;
+
+	case 6:
+		ppnumbers();
 		break;
 
 	default:
