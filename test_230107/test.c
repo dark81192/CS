@@ -267,6 +267,28 @@ void reverse_str()
 	printf("%s\n", arr);
 }
 
+void reverse_sfunc(char* arr)
+{
+	char temp = *arr;
+	int len = strlen_s(arr);
+	*arr = *arr + (len - 1);
+	*(arr + (len - 1)) = '\0';
+	if (strlen_s(arr+1) >= 2)
+		reverse_sfunc(arr + 1);
+	*(arr + (len - 1)) = temp;
+}
+
+void reverse_s()
+{
+	char arr[20] = { 0 };
+
+	printf("please enter a string char:>");
+	scanf("%s", arr);
+
+	reverse_sfunc(arr);
+	printf("%s\n", arr);
+}
+
 int main()
 {
 	int o = 0;
@@ -284,6 +306,7 @@ int main()
 	printf("11.nµÄ½×³Ëµİ¹é(²»¿¼ÂÇÒç³ö)\n");
 	printf("12.µİ¹éÊµÏÖstrlenµÄÄ£Äâ\n");
 	printf("13.µ¹ĞòÅÅÁĞ×Ö·û´®\n");
+	printf("14.µ¹ĞòÅÅÁĞ×Ö·û´®(µİ¹é)\n");
 
 	scanf("%d", &o);
 	
@@ -340,6 +363,10 @@ int main()
 	
 	case 13:
 		reverse_str();
+		break;
+
+	case 14:
+		reverse_s();
 		break;
 
 	default:
