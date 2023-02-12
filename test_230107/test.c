@@ -185,7 +185,7 @@ void func_printNum(int num)
 	else
 	{
 		printf("%d ", num % 10);
-		return func_printNum(num / 10);
+		func_printNum(num / 10);
 	}
 
 }
@@ -223,6 +223,24 @@ void factorial()
 
 }
 
+int strlen_s(char* str)
+{
+	if (*str != '\0')
+		return 1 + strlen_s(str + 1);
+	else
+		return 0;
+}
+
+void simulation_strlen()
+{
+	char str[20] = { 0 };
+	
+	printf("please enter a string char:>");
+	scanf("%s", str);
+
+	printf("%d\n", strlen_s(str));
+}
+
 int main()
 {
 	int o = 0;
@@ -238,6 +256,7 @@ int main()
 	printf("9.指定行数的乘法表\n");
 	printf("10.递归打印一个数的每一位\n");
 	printf("11.n的阶乘递归(不考虑溢出)\n");
+	printf("12.递归实现strlen的模拟\n");
 
 	scanf("%d", &o);
 	
@@ -286,6 +305,10 @@ int main()
 
 	case 11:
 		factorial();
+		break;
+
+	case 12:
+		simulation_strlen();
 		break;
 
 	default:
