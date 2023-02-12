@@ -307,14 +307,14 @@ void digitsum()
 	printf("%d\n", digitsum_func(num));
 }
 
-int power_func(int n, int k)
+double power_func(int n, int k)
 {
-	if (k == 1)
-		return n;
-	else if (k == 0 || n == 0)
-		return 1;
-	else
+	if (k == 0 || n == 0)
+		return 1.0;
+	else if (k > 0)
 		return n * power_func(n, k - 1);
+	else
+		return 1.0 / (power_func(n, -k));
 }
 
 void power()
@@ -327,7 +327,25 @@ void power()
 	printf("please enter the power of the number:>");
 	scanf("%d", &k);
 
-	printf("%d\n", power_func(n, k));
+	printf("%.5lf\n", power_func(n, k));
+}
+
+int fib(int n)
+{
+	if (n < 3)
+		return 1;
+	else
+		return fib(n - 1) + fib(n - 2);
+}
+
+void fibonacci()
+{
+	int n = 0;
+	
+	printf("please enter a fibonacci number(positive integer):>");
+	scanf("%d", &n);
+
+	printf("%d\n", fib(n));
 }
 
 int main()
@@ -350,6 +368,7 @@ int main()
 	printf("14.倒序排列字符串(递归)\n");
 	printf("15.分解非负数的数字并求和(递归)\n");
 	printf("16.实现n的k次方(递归)\n");
+	printf("17.输出n的斐波那契数(递归)\n");
 
 	scanf("%d", &o);
 	
@@ -418,6 +437,10 @@ int main()
 
 	case 16:
 		power();
+		break;
+
+	case 17:
+		fibonacci();
 		break;
 
 	default:
