@@ -307,6 +307,29 @@ void digitsum()
 	printf("%d\n", digitsum_func(num));
 }
 
+int power_func(int n, int k)
+{
+	if (k == 1)
+		return n;
+	else if (k == 0 || n == 0)
+		return 1;
+	else
+		return n * power_func(n, k - 1);
+}
+
+void power()
+{
+	int n = 0;
+	int k = 0;
+
+	printf("please enter a number:>");
+	scanf("%d", &n);
+	printf("please enter the power of the number:>");
+	scanf("%d", &k);
+
+	printf("%d\n", power_func(n, k));
+}
+
 int main()
 {
 	int o = 0;
@@ -326,6 +349,7 @@ int main()
 	printf("13.倒序排列字符串\n");
 	printf("14.倒序排列字符串(递归)\n");
 	printf("15.分解非负数的数字并求和(递归)\n");
+	printf("16.实现n的k次方(递归)\n");
 
 	scanf("%d", &o);
 	
@@ -390,6 +414,10 @@ int main()
 
 	case 15:
 		digitsum();
+		break;
+
+	case 16:
+		power();
 		break;
 
 	default:
