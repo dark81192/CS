@@ -241,6 +241,32 @@ void simulation_strlen()
 	printf("%d\n", strlen_s(str));
 }
 
+void reserve_strFunc(char* arr)
+{
+	int left = 0;
+	int right = strlen_s(arr) - 1;
+	char v;
+	while (left < right)
+	{
+		v = *(arr + left);
+		*(arr + left) = *(arr + right);
+		*(arr + right) = v;
+		left++;
+		right--;
+	}
+}
+
+void reverse_str()
+{
+	char arr[20] = { 0 };
+
+	printf("please enter a string char:>");
+	scanf("%s", arr);
+
+	reserve_strFunc(arr);
+	printf("%s\n", arr);
+}
+
 int main()
 {
 	int o = 0;
@@ -257,6 +283,7 @@ int main()
 	printf("10.递归打印一个数的每一位\n");
 	printf("11.n的阶乘递归(不考虑溢出)\n");
 	printf("12.递归实现strlen的模拟\n");
+	printf("13.倒序排列字符串\n");
 
 	scanf("%d", &o);
 	
@@ -309,6 +336,10 @@ int main()
 
 	case 12:
 		simulation_strlen();
+		break; 
+	
+	case 13:
+		reverse_str();
 		break;
 
 	default:
