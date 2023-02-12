@@ -289,6 +289,24 @@ void reverse_s()
 	printf("%s\n", arr);
 }
 
+int digitsum_func(int num)
+{
+	if (num < 10)
+		return num;
+	else
+		return num % 10 + digitsum_func(num / 10);
+}
+
+void digitsum()
+{
+	int num = 0;
+
+	printf("please enter a number:>");
+	scanf("%d", &num);
+
+	printf("%d\n", digitsum_func(num));
+}
+
 int main()
 {
 	int o = 0;
@@ -307,6 +325,7 @@ int main()
 	printf("12.递归实现strlen的模拟\n");
 	printf("13.倒序排列字符串\n");
 	printf("14.倒序排列字符串(递归)\n");
+	printf("15.分解非负数的数字并求和(递归)\n");
 
 	scanf("%d", &o);
 	
@@ -367,6 +386,10 @@ int main()
 
 	case 14:
 		reverse_s();
+		break;
+
+	case 15:
+		digitsum();
 		break;
 
 	default:
