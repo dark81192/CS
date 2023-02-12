@@ -200,6 +200,29 @@ void print_num()
 	func_printNum(num);
 }
 
+int factorial_func(int n)
+{
+	if (n <= 1)
+	{
+		return 1;
+	}
+	else
+	{
+		return n * factorial_func(n - 1);
+	}
+}
+
+void factorial()
+{
+	int n = 0;
+	
+	printf("请输入n:>");
+	scanf("%d", &n);
+
+	printf("%d\n", factorial_func(n));
+
+}
+
 int main()
 {
 	int o = 0;
@@ -214,6 +237,7 @@ int main()
 	printf("8.交换两个整数\n");
 	printf("9.指定行数的乘法表\n");
 	printf("10.递归打印一个数的每一位\n");
+	printf("11.n的阶乘递归(不考虑溢出)\n");
 
 	scanf("%d", &o);
 	
@@ -258,6 +282,10 @@ int main()
 
 	case 10:
 		print_num();
+		break;
+
+	case 11:
+		factorial();
 		break;
 
 	default:
