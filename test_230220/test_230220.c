@@ -7,6 +7,7 @@ void px(int arr[], int l)
 	int i = 0;
 	int tmp = 0;
 	int j = 0;
+	int flag = 1;
 	
 	for (i = 0; i < l; i++)
 	{
@@ -23,8 +24,11 @@ void px(int arr[], int l)
 				tmp = arr[j + 1];
 				arr[j + 1] = arr[j];
 				arr[j] = tmp;
+				flag = 0;
 			}
 		}
+		if (flag == 1)
+			break;
 	}
 	for (i = 0; i < l; i++)
 	{
