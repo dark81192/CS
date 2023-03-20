@@ -85,9 +85,6 @@ void PlayerMove(char board[ROW][COL], int row, int col)
 //电脑下棋
 void ComputerMove(char board[ROW][COL], int row, int col)
 {
-	//时间随机数
-	srand((unsigned)time(NULL));
-
 	int r = 0;
 	int s = 0;
 

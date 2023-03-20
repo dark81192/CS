@@ -52,6 +52,9 @@ int main()
 {
 	int select = 0;
 
+	//时间随机数
+	srand((unsigned)time(NULL));
+
 	do
 	{
 		system("cls");
