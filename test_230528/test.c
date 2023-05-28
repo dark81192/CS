@@ -20,17 +20,21 @@ void game()
 	InitBoard(mine, ROWS, COLS, '0');
 	InitBoard(show, ROWS, COLS, '*');
 
-	//打印雷区棋盘
-	DisplayBoard(show, ROW, COL);
-
 	//布置雷
 	SetMine(mine, ROW, COL);
 
+	//打印雷区
+	DisplayBoard(mine, ROW, COL);
+
+	//排查雷
+	FindMine(mine, show, ROW, COL);
 }
 
 int main()
 {
 	int input = 0;
+
+	srand((unsigned int)time(NULL));
 
 	do 
 	{
