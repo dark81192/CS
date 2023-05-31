@@ -58,14 +58,49 @@ void SetMine(char board[ROWS][COLS], int row, int col)
 
 int get_mine_count(char mine[ROWS][COLS], int x, int y)
 {
-	return mine[x - 1][y] +
+	return (mine[x][y + 1] +
+		mine[x - 1][y + 1] +
+		mine[x - 1][y] +
 		mine[x - 1][y - 1] +
 		mine[x][y - 1] +
 		mine[x + 1][y - 1] +
 		mine[x + 1][y] +
-		mine[x + 1][y + 1] +
-		mine[x][y + 1] + 
-		mine[x - 1][y + 1] - 8 * '0';
+		mine[x + 1][y + 1] - 8 * '0');
+}
+
+void open_round(char mine[ROWS][COLS], char show[ROWS][COLS], int x, int y,int* win)
+{
+	if (x >= 1 && x <= ROW && y >= 1 && y <= COL)
+	{
+		int count = get_mine_count(mine, x, y);
+
+		if (count == 0)
+		{
+			(*win)++;
+
+			show[x][y] = ' ';
+
+			int i = 0;
+			int j = 0;
+
+			for (i = x - 1; i <= x + 1; i++)
+			{
+				for (j = y - 1; j <= y + 1; j++)
+				{
+					if (show[i][j] == '*')
+					{
+						open_round(mine, show, i, j, win);
+					}
+				}
+			}
+		}
+		else
+		{
+			(*win)++;
+			show[x][y] = count + '0';
+		}
+
+	}
 }
 
 void FindMine(char mine[ROWS][COLS], char show[ROWS][COLS], int row, int col)
@@ -96,8 +131,9 @@ void FindMine(char mine[ROWS][COLS], char show[ROWS][COLS], int row, int col)
 		{
 			if (mine[x][y] == '0')
 			{
-				count = get_mine_count(mine, x, y);
-				show[x][y] = count + '0';
+				//count = get_mine_count(mine, x, y);
+				//show[x][y] = count + '0';
+				open_round(mine, show, x, y, &win);
 			}
 			else
 			{
