@@ -103,6 +103,30 @@ void open_round(char mine[ROWS][COLS], char show[ROWS][COLS], int x, int y,int* 
 	}
 }
 
+void mark_mine(char show[ROWS][COLS])
+{
+	int x = 0;
+	int y = 0;
+
+	
+	while (1)
+	{
+		printf("输入标记坐标:>");
+		scanf("%d %d", &x, &y);
+
+		if (show[x][y] == '!')
+		{
+			printf("坐标已经标记过了！\n");
+		}
+		else
+		{
+			show[x][y] = '!';
+			break;
+		}
+	}
+}
+	
+
 void FindMine(char mine[ROWS][COLS], char show[ROWS][COLS], int row, int col)
 {
 	// 0. 显示雷数
@@ -120,53 +144,79 @@ void FindMine(char mine[ROWS][COLS], char show[ROWS][COLS], int row, int col)
 
 	int x = 0;
 	int y = 0;
+	int i = 0;
 
-	char o = 0;
 	char ch = 0;
+
+	//system("cls");
+	DisplayBoard(show, row, col);
+
+	printf("输入排雷坐标:>");
+	scanf("%d %d", &x, &y);
 
 	while (win < (row * col - EASY))
 	{
-		//printf("雷还有%d个\n", mine_count);
-		DisplayBoard(show, row, col);
-		//printf("f 5 5 排查坐标(5,5)，m 5 5 标记坐标(5,5)为标记坐标为地雷m\n");
-		printf("输入排雷坐标:>");
-		//while ((ch = getchar()) != '\n');
-		//scanf("%c %d %d", &o, &x, &y);
-		scanf("%d %d", &x, &y);
-
-		/*if (o == 'm')
+		while (i > 0)
 		{
-			mine_count--;
-			show[x][y] = 'm';
-		}
-		else
-		{*/
-			if (x >= 1 && x <= row && y >= 1 && y <= col)
+			//system("cls");
+			printf("雷还有%d个\n", mine_count);
+			DisplayBoard(show, row, col);
+			printf("标记雷请按y/Y,否则请按任意键:>");
+
+			while ((ch = getchar()) != '\n');
+			scanf("%c", &ch);
+
+			if (ch == 'y' || ch == 'Y')
 			{
-				if (mine[x][y] == '0')
-				{
-					//count = get_mine_count(mine, x, y);
-					//show[x][y] = count + '0';
-					open_round(mine, show, x, y, &win);
-				}
-				else
-				{
-					system("cls");
-					printf("你被炸死了！\n游戏结束！\n");
-					DisplayBoard(mine, ROW, COL);
-					break;
-				}
-				win++;
+				mark_mine(show);
+				mine_count--;
 			}
 			else
 			{
-				printf("坐标非法！\n");
+				DisplayBoard(show, row, col);
+				printf("输入排雷坐标:>");
+				scanf("%d %d", &x, &y);
+				break;
+			}
+
+			/*DisplayBoard(show, row, col);
+			printf("输入排雷坐标:>");
+			scanf("%d %d", &x, &y);*/
+		}
+		
+		//while ((ch = getchar()) != '\n');
+		//scanf("%c %d %d", &o, &x, &y);
+		//scanf("%d %d", &x, &y);
+		if (x >= 1 && x <= row && y >= 1 && y <= col)
+		{
+			if (mine[x][y] == '0')
+			{
+				//count = get_mine_count(mine, x, y);
+				//show[x][y] = count + '0';
+				open_round(mine, show, x, y, &win);
+				i = 1;
+			}
+			else
+			{
+				//system("cls");
+				printf("你被炸死了！\n游戏结束！\n");
+				DisplayBoard(mine, ROW, COL);
+				break;
 			}
 		}
-//	}
+		else
+		{
+			printf("坐标非法！\n");
+			i = 0;
+			printf("输入排雷坐标:>");
+			scanf("%d %d", &x, &y);
+		}
+	}
+
 	if (win == row * col - EASY)
 	{
 		printf("你赢了！\n");
+		DisplayBoard(show, row, col);
 		system("pause");
 	}
 }
