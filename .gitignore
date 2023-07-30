@@ -1,0 +1,9 @@
+#example
+*/Debug/
+*/*.sln
+*/*.vcxproj
+*/*.filters
+*/*.user
+*/.vs/
+*/Release/
+*/x64/
