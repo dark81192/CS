@@ -10,10 +10,20 @@ int main()
 
 	scanf("%d %d", &x, &y);
 
-	for (int i = 0; i < 32; i++)
+	//第一种方式
+	/*for (int i = 0; i < 32; i++)
 	{
 		if (((x >> i) & 1) != ((y >> i) & 1))
 			count++;
+	}*/
+
+	//第二种方式
+	int ret = x ^ y;
+
+	while (ret)
+	{
+		ret = ret & (ret - 1);
+		count++;
 	}
 
 	printf("%d\n", count);
