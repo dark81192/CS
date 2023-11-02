@@ -17,7 +17,7 @@ int main()
 			count++;
 	}*/
 
-	//第二种方式
+	//第二种方式异或
 	int ret = x ^ y;
 
 	while (ret)
@@ -25,6 +25,7 @@ int main()
 		ret = ret & (ret - 1);
 		count++;
 	}
+
 
 	printf("%d\n", count);
 
