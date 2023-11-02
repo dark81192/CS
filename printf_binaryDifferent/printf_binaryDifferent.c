@@ -27,32 +27,42 @@ int main()
 	}
 
 	//分别打印出x的奇数位和偶数位
-	printf("奇数位: ");
+
+	printf("x的二进制: ");
+
+	for (int i = 31; i >= 0; i --)
+	{
+		printf("%d ", (x >> i) & 1);
+	}
+
+	printf("\n奇数位: ");
 
 	for (int i = 31; i >= 0; i-= 2)
 	{
-		if ((x >> i) & 1)
+		/*if ((x >> i) & 1)
 		{
 			printf("%d ", 1);
 		}
 		else
 		{
 			printf("%d ", 0);
-		}
+		}*/
+		printf("%d ", (x >> i) & 1);
 	}
 
 	printf("\n偶数位: ");
 
 	for (int i = 30; i >= 0; i -= 2)
 	{
-		if ((x >> i) & 1)
+		/*if ((x >> i) & 1)
 		{
 			printf("%d ", 1);
 		}
 		else
 		{
 			printf("%d ", 0);
-		}
+		}*/
+		printf("%d ", (x >> i) & 1);
 	}
 
 	printf("\n有%d位不同\n", count);
