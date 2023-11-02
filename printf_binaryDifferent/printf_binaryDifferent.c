@@ -67,5 +67,20 @@ int main()
 
 	printf("\n有%d位不同\n", count);
 
+	//不用变量交换x和y
+	printf("交换x和y\n当前x为%d,y为%d\n", x, y);
+
+	//简便方法
+	/*x = x + y;
+	y = x - y;
+	x = x - y;*/
+
+	//高性能方法
+	x = x ^ y;
+	y = x ^ y;
+	x = x ^ y;
+
+	printf("交换后: x为%d,y为%d\n", x, y);
+
 	return 0;
 }
