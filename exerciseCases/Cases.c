@@ -2,9 +2,21 @@
 
 #include <stdio.h>
 
+void reverser(char* strl, char* strr)
+{
+	while (strl < strr)
+	{
+		char tmp = 0;
+		tmp = *strl;
+		*strl++ = *strr;
+		*strr-- = tmp;
+	}
+}
+
 int main()
 {
-	char str[100] = { '\0'};
+	//The first method.
+	/*char str[100] = { '\0'};
 	int i = 0;
 	int j = 0;
 
@@ -32,9 +44,45 @@ int main()
 				printf("%c", str[j]);
 				j++;
 			}
+
 			printf(" ");
 		}
+	}*/
+
+	//The second method.
+	char str[100] = { 0 };
+
+	gets(str);
+
+	int i = 0;
+
+	while (str[i] != '\0')
+		i++;
+
+	int len = i - 1;
+
+	reverser(str, str + len);
+ 
+	int left = 0;
+	int right = -1;
+
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		if (str[i] == ' ')
+		{
+			left = right + 1;
+			right = i;
+
+			reverser(str + left, str + right - 1);
+		}
 	}
+
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		printf("%c", str[i]);
+	}
+
+	printf("\n");
 
 	return 0;
 }
