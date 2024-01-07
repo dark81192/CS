@@ -77,12 +77,7 @@ int main()
 		}
 	}
 
-	for (i = 0; str[i] != '\0'; i++)
-	{
-		printf("%c", str[i]);
-	}
-
-	printf("\n");
+	printf("%s \n", str);
 
 	return 0;
 }
