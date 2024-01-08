@@ -2,10 +2,7 @@
 
 int Check_sys_func(char* p)
 {
-	if (*p == 1)
-		return 1;
-	else
-		return 0;
+	return *p;
 }
 
 void Check_sys()
