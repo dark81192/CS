@@ -48,9 +48,10 @@ void reverser()
 	}*/
 
 	//The second method.
+	gets();
+
 	char str[100] = { 0 };
 
-	gets();
 	gets(str);
 
 	int i = 0;
@@ -77,4 +78,6 @@ void reverser()
 	}
 
 	printf("%s \n", str);
+
+	return;
 }

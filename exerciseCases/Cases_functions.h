@@ -3,3 +3,5 @@
 
 void reverser();
 void Check_sys();
+void FFO();
+void SumOfSn();

@@ -14,4 +14,6 @@ void Check_sys()
 		printf("Small-ended storage\n");
 	else
 		printf("Big-end storage\n");
+
+	return;
 }
