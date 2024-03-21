@@ -21,77 +21,40 @@ int pow_func(int *nums, int pow)
 	return sum;
 }
 
-int calc(int num, int pow)
+void calc(int num, int pow)
 {
 	int nums[5] = { 0 };
+	int i = 0;
+	int temp = num;
 
-	if (pow == 3)
+	while (temp)
 	{
-		nums[0] = num / 100;
-		nums[1] = (num % 100) / 10;
-		nums[2] = num % 10;
+		nums[i] = temp % 10;
+		temp = temp / 10;
+		i++;
+	}
 
-		if (pow_func(nums, pow) == num)
-			return num;
-	}
-	else if (pow == 4)
-	{
-		nums[0] = num / 1000;
-		nums[1] = (num % 1000) / 100;
-		nums[2] = (num % 100) / 10;
-		nums[3] = num % 10;
-
-		if (pow_func(nums, pow) == num)
-			return num;
-	}
-	else if (pow == 5)
-	{
-		nums[0] = num / 10000;
-		nums[1] = (num % 10000) / 1000;
-		nums[2] = (num % 1000) / 100;
-		nums[3] = (num % 100) / 10;
-		nums[4] = num % 10;
-		if (pow_func(nums, pow) == num)
-			return num;
-	}
-	
-	return 0;
+	if (pow_func(nums, pow) == num)
+		printf("%d ", num);
 }
 
 void NarcissisticNumber()
 {
 	int num = 0;
-	int pow = 0;
 	int ret = 0;
 
-	while (num <= 100000)
+	while (num < 100000)
 	{
+		int i = num;
+		int pow = 1;
+
+		while (i / 10)
+		{
+			pow++;
+			i = i / 10;
+		}
 		
-		if (num < 10)
-			printf("%d ", num);
-		else if (num < 100)
-			num = 100;
-		else if (num < 1000)
-		{
-			pow = 3;
-			ret = calc(num, pow);
-			if (ret)
-				 printf("%d ", ret);
-		}
-		else if (num < 10000)
-		{
-			pow = 4;
-			ret = calc(num, pow);
-			if (ret)
-				printf("%d ", ret);
-		}
-		else if (num < 100000)
-		{
-			pow = 5;
-			ret = calc(num, pow);
-			if (ret)
-				printf("%d ", ret);
-		}
+		calc(num, pow);
 
 		num++;
 	}
