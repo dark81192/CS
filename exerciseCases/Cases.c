@@ -7,7 +7,9 @@ void menu()
 	printf("1. Str_reverser\n");
 	printf("2. Check_sys_byte-order\n");
 	printf("3. Floating-point formula output(unfinished)\n");
-	printf("4. Sum of Sn(recursion)\n");
+	printf("4. Sum of Sn\n");
+	printf("5. Pointer print array\n");
+	printf("6. Narcissitic Numbers(0-100000)\n");
 	printf(">");
 }
 
@@ -17,7 +19,7 @@ int main()
 
 	menu();
 
-	scanf("%d", &o);
+	scanf_s("%d", &o);
 
 	switch (o)
 	{
@@ -29,6 +31,10 @@ int main()
 			FFO();
 		case 4:
 			SumOfSn();
+		case 5:
+			PointerPrintArray(); 
+		case 6:
+			NarcissisticNumber();
 		default:
 			printf("\n");
 	}
