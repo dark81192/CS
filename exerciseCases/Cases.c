@@ -10,6 +10,9 @@ void menu()
 	printf("4. Sum of Sn\n");
 	printf("5. Pointer print array\n");
 	printf("6. Narcissitic Numbers(0-100000)\n");
+	printf("7. Print diamond\n");
+	printf("8. Soda problem\n");
+	printf("9. Odd even sort\n");
 	printf(">");
 }
 
@@ -35,6 +38,12 @@ int main()
 			PointerPrintArray(); 
 		case 6:
 			NarcissisticNumber();
+		case 7:
+			PrintDiamond();
+		case 8:
+			SodaProblem();
+		case 9:
+			OddEvenSort();
 		default:
 			printf("\n");
 	}

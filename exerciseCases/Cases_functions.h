@@ -7,3 +7,6 @@ void FFO();
 void SumOfSn();
 void PointerPrintArray();
 void NarcissisticNumber();
+void PrintDiamond();
+void SodaProblem();
+void OddEvenSort();
