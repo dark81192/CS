@@ -10,3 +10,4 @@ void NarcissisticNumber();
 void PrintDiamond();
 void SodaProblem();
 void OddEvenSort();
+void PascalTriangle();

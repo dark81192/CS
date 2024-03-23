@@ -4,15 +4,16 @@
 
 void menu()
 {
-	printf("1. Str_reverser\n");
-	printf("2. Check_sys_byte-order\n");
-	printf("3. Floating-point formula output(unfinished)\n");
-	printf("4. Sum of Sn\n");
-	printf("5. Pointer print array\n");
-	printf("6. Narcissitic Numbers(0-100000)\n");
-	printf("7. Print diamond\n");
-	printf("8. Soda problem\n");
-	printf("9. Odd even sort\n");
+	printf(" 1. Str_reverser\n");
+	printf(" 2. Check_sys_byte-order\n");
+	printf(" 3. Floating-point formula output(unfinished)\n");
+	printf(" 4. Sum of Sn\n");
+	printf(" 5. Pointer print array\n");
+	printf(" 6. Narcissitic Numbers(0-100000)\n");
+	printf(" 7. Print diamond\n");
+	printf(" 8. Soda problem\n");
+	printf(" 9. Odd even sort\n");
+	printf("10. Pascal's triangle\n");
 	printf(">");
 }
 
@@ -44,6 +45,8 @@ int main()
 			SodaProblem();
 		case 9:
 			OddEvenSort();
+		case 10:
+			PascalTriangle();
 		default:
 			printf("\n");
 	}
