@@ -14,6 +14,8 @@ void menu()
 	printf(" 8. Soda problem\n");
 	printf(" 9. Odd even sort\n");
 	printf("10. Pascal's triangle\n");
+	printf("11. Killer pronlem\n");
+	printf("12. Diving pronlem\n");
 	printf(">");
 }
 
@@ -25,31 +27,43 @@ int main()
 
 	scanf_s("%d", &o);
 
-	switch (o)
-	{
-		case 1:
-			reverser();
-		case 2:
-			Check_sys();
-		case 3:
-			FFO();
-		case 4:
-			SumOfSn();
-		case 5:
-			PointerPrintArray(); 
-		case 6:
-			NarcissisticNumber();
-		case 7:
-			PrintDiamond();
-		case 8:
-			SodaProblem();
-		case 9:
-			OddEvenSort();
-		case 10:
-			PascalTriangle();
-		default:
-			printf("\n");
-	}
+	int (*parr[13])() = { NULL, reverser, Check_sys, FFO, SumOfSn,PointerPrintArray,
+						NarcissisticNumber,PrintDiamond,SodaProblem,OddEvenSort,
+						PascalTriangle,Killer,DivingProblem
+						};
+
+	if(o>0&&o<13)
+		parr[o]();
+
+	//switch (o)
+	//{
+	//	case 1:
+	//		reverser();
+	//	case 2:
+	//		Check_sys();
+	//	case 3:
+	//		FFO();
+	//	case 4:
+	//		SumOfSn();
+	//	case 5:
+	//		PointerPrintArray(); 
+	//	case 6:
+	//		NarcissisticNumber();
+	//	case 7:
+	//		PrintDiamond();
+	//	case 8:
+	//		SodaProblem();
+	//	case 9:
+	//		OddEvenSort();
+	//	case 10:
+	//		PascalTriangle();
+	//	case 11:
+	//		Killer();
+	//	case 12:
+	//		DivingProblem();
+	//	default:
+	//		printf("\n");
+	//}
 
 	return 0;
 }

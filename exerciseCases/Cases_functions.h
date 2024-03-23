@@ -11,3 +11,5 @@ void PrintDiamond();
 void SodaProblem();
 void OddEvenSort();
 void PascalTriangle();
+void Killer();
+void DivingProblem();
