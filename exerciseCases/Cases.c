@@ -16,6 +16,7 @@ void menu()
 	printf("10. Pascal's triangle\n");
 	printf("11. Killer pronlem\n");
 	printf("12. Diving pronlem\n");
+	printf("13. Qsort function is used\n");
 	printf(">");
 }
 
@@ -27,12 +28,14 @@ int main()
 
 	scanf_s("%d", &o);
 
-	int (*parr[13])() = { NULL, reverser, Check_sys, FFO, SumOfSn,PointerPrintArray,
-						NarcissisticNumber,PrintDiamond,SodaProblem,OddEvenSort,
-						PascalTriangle,Killer,DivingProblem
+	int (*parr[14])() = { NULL, reverser, Check_sys, FFO, SumOfSn,
+						PointerPrintArray,NarcissisticNumber,
+						PrintDiamond,SodaProblem,OddEvenSort,
+						PascalTriangle,Killer,DivingProblem,
+						QsortFunIsUsed
 						};
 
-	if(o>0&&o<13)
+	if(o>0&&o<14)
 		parr[o]();
 
 	//switch (o)
