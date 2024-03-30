@@ -1,5 +1,6 @@
 #include "Cases_functions.h"
 #include <stdlib.h>
+#include <string.h>
 
 struct stu
 {
@@ -10,6 +11,11 @@ struct stu
 int qsort_int(const void* e1, const void* e2)
 {
 	return *(int*)e1 - *(int*)e2;
+}
+
+int qsort_int_reverse(const void* e1, const void* e2)
+{
+	return -(*(int*)e1 - *(int*)e2);
 }
 
 int qsort_str_age(const void* e1, const void* e2)
@@ -25,6 +31,8 @@ int qsort_str_name(const void* e1, const void* e2)
 void print_int(int* arr, int sz)
 {
 	int i = 0;
+
+	//printf("asending order:\n");
 	
 	for (i = 0; i < sz; i++)
 	{
@@ -69,4 +77,7 @@ void QsortFunIsUsed()
 	print_int(arr, sz);
 	print_str_age(s, sz_s);
 	print_str_name(s, sz_s);
+
+	qsort(arr, sz, sizeof(arr[0]), qsort_int_reverse);
+	print_int(arr, sz);
 }
