@@ -62,6 +62,34 @@ void print_str_name(struct stu* arr, int sz)
 	}
 }
 
+void swap(char* buf1, char* buf2, int width)
+{
+	int i = 0;
+	for (i = 0; i < width; i++)
+	{
+		int tmp = *(buf1 + i);
+		*(buf1 + i) = *(buf2 + i);
+		*(buf2 + i) = tmp;
+	}
+}
+
+void my_bubble_qsort(void* base, int sz, int width, int (*cmp)(const void* e1, const void* e2))
+{
+	int i = 0;
+
+	for (i = 0; i < sz - 1; i++)
+	{
+		int j = 0;
+		for (j = 0; j < sz - 1 - i; j++)
+		{
+			if(cmp((char*)base + j * width, (char*)base + (j + 1) * width) > 0)
+			{
+				swap((char*)base + j * width, (char*)base + (j + 1) * width, width);
+			}
+		}
+	}
+}
+
 void QsortFunIsUsed()
 {
 	int arr[] = { 9,8,7,6,5,4,3,2,1,0 };
@@ -79,5 +107,11 @@ void QsortFunIsUsed()
 	print_str_name(s, sz_s);
 
 	qsort(arr, sz, sizeof(arr[0]), qsort_int_reverse);
+	print_int(arr, sz);
+
+	my_bubble_qsort(arr, sz, sizeof(arr[0]), qsort_int);
+	print_int(arr, sz);
+
+	my_bubble_qsort(arr, sz, sizeof(arr[0]), qsort_int_reverse);
 	print_int(arr, sz);
 }
