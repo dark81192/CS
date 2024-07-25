@@ -13,4 +13,5 @@ void OddEvenSort();
 void PascalTriangle();
 void Killer();
 void DivingProblem();
-void QsortFunIsUsed();
+void QsortFunIsUsed(); 
+void YanghuiTriangle();

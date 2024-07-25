@@ -1,6 +1,6 @@
 #include "cases_functions.h"
 
-#define line 99
+#define line 20
 
 void PrintDiamond()
 {
@@ -21,7 +21,7 @@ void PrintDiamond()
 	{
 		for (j = 0; j < i; j += 2)
 			printf("%c", sp);
-		for (int k = line - i - 1; k > 0; k--)
+		for (int k = line - i - 1; k >= 0; k--)
 			printf("%c", ch);
 		printf("\n");
 	}
