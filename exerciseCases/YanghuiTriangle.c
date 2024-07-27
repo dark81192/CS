@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS 1
 #include "Cases_functions.h"
 
 void YanghuiTriangle()
@@ -15,13 +16,43 @@ void YanghuiTriangle()
 			else
 				Triangle[row][col] = Triangle[row - 1][col] + Triangle[row - 1][col - 1];
 		}
+
+		int j = 0;
+
+		while (j < (10 - row))
+		{
+			printf("   ");
+			j++;
+		}
+
 		for (int i = 0; i <= row; i++)
 		{
-			if (i > (10 - row) / 2)
-				printf("%d ", Triangle[row][i]);
-			else
-				printf("  ");
+			printf("%6d", Triangle[row][i]);
+			//printf("   ");
 		}
+		printf("\n");
+	}
+}
+
+int YhTriangleRec(int r, int c)
+{
+	return (c == 1 || c == r) ? 1 : YhTriangleRec(r - 1, c - 1) + YhTriangleRec(r - 1, c);
+}
+
+void YanghuiTriangle_Recursion()
+{
+	int x = 0;
+	int i, j;
+
+	printf("x: ");
+	scanf("%d", &x);
+
+	for (i = 1; i <= x; i++)
+	{
+		for (j = 0; j <= x - i; j++)
+			printf("   ");
+		for (j = 1; j <= i; j++)
+			printf("%6d", YhTriangleRec(i, j));
 		printf("\n");
 	}
 }
