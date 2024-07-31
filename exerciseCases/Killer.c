@@ -7,6 +7,6 @@ void Killer()
 	for (killer = 'A'; killer <= 'D'; killer++)
 	{
 		if ((killer != 'A') + (killer == 'C') + (killer == 'D') + (killer != 'D') == 3)
-			printf("%c\n", killer);
+			printf("Killer: %c\n", killer);
 	}
 }

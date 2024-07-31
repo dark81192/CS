@@ -19,6 +19,7 @@ void menu()
 	printf("13. Qsort function is used\n");
 	printf("14. YanghuiTriangle\n");
 	printf("15. YanghuiTriangle(Recursion)\n");
+	printf("16. Dive Ranking Question\n");
 	printf(">");
 }
 
@@ -30,14 +31,15 @@ int main()
 
 	scanf_s("%d", &o);
 
-	int (*parr[16])() = { NULL, reverser, Check_sys, FFO, SumOfSn,
+	int (*parr[17])() = { NULL, reverser, Check_sys, FFO, SumOfSn,
 						PointerPrintArray,NarcissisticNumber,
 						PrintDiamond,SodaProblem,OddEvenSort,
 						PascalTriangle,Killer,DivingProblem,
-						QsortFunIsUsed,YanghuiTriangle,YanghuiTriangle_Recursion
+						QsortFunIsUsed,YanghuiTriangle,YanghuiTriangle_Recursion,
+						DiveRanking
 						};
 
-	if(o>0&&o<16)
+	if(o>0&&o<17)
 		parr[o]();
 
 	//switch (o)

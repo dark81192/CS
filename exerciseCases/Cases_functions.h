@@ -15,4 +15,5 @@ void Killer();
 void DivingProblem();
 void QsortFunIsUsed(); 
 void YanghuiTriangle();
-void YanghuiTriangle_Recursion();
+void YanghuiTriangle_Recursion(); 
+void DiveRanking();
