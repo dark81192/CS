@@ -4,22 +4,22 @@
 
 void menu()
 {
-	printf(" 1. Str_reverser\n");
-	printf(" 2. Check_sys_byte-order\n");
-	printf(" 3. Floating-point formula output(unfinished)\n");
-	printf(" 4. Sum of Sn\n");
-	printf(" 5. Pointer print array\n");
-	printf(" 6. Narcissitic Numbers(0-100000)\n");
-	printf(" 7. Print diamond\n");
-	printf(" 8. Soda problem\n");
-	printf(" 9. Odd even sort\n");
-	printf("10. Pascal's triangle\n");
-	printf("11. Killer pronlem\n");
-	printf("12. Diving pronlem\n");
-	printf("13. Qsort function is used\n");
-	printf("14. YanghuiTriangle\n");
-	printf("15. YanghuiTriangle(Recursion)\n");
-	printf("16. Dive Ranking Question\n");
+	printf(" 1. Str_reverser(字符逆序)\n");
+	printf(" 2. Check_sys_byte-order(大小端检测)\n");
+	printf(" 3. Floating-point formula output(unfinished)(浮点数公式输出)\n");
+	printf(" 4. Sum of Sn(Sn之和)\n");
+	printf(" 5. Pointer print array(指针输出数组)\n");
+	printf(" 6. Narcissitic Numbers(0-100000)(水仙花数字)\n");
+	printf(" 7. Print diamond(打印菱形)\n");
+	printf(" 8. Soda problem(苏打水问题)\n");
+	printf(" 9. Odd even sort(奇偶排序)\n");
+	printf("10. Pascal's triangle(杨辉三角)\n");
+	printf("11. Killer pronlem(谁是杀手)\n");
+	printf("12. Diving pronlem(跳水排名)\n");
+	printf("13. Qsort function is used(手写qsort与使用)\n");
+	printf("14. YanghuiTriangle(杨辉三角)\n");
+	printf("15. YanghuiTriangle(Recursion)(杨辉三角)\n");
+	printf("16. Dive Ranking Question(跳水排名)\n");
 	printf(">");
 }
 
@@ -39,38 +39,8 @@ int main()
 						DiveRanking
 						};
 
-	if(o>0&&o<17)
+	if(o > 0 && o < 17)
 		parr[o]();
-
-	//switch (o)
-	//{
-	//	case 1:
-	//		reverser();
-	//	case 2:
-	//		Check_sys();
-	//	case 3:
-	//		FFO();
-	//	case 4:
-	//		SumOfSn();
-	//	case 5:
-	//		PointerPrintArray(); 
-	//	case 6:
-	//		NarcissisticNumber();
-	//	case 7:
-	//		PrintDiamond();
-	//	case 8:
-	//		SodaProblem();
-	//	case 9:
-	//		OddEvenSort();
-	//	case 10:
-	//		PascalTriangle();
-	//	case 11:
-	//		Killer();
-	//	case 12:
-	//		DivingProblem();
-	//	default:
-	//		printf("\n");
-	//}
 
 	return 0;
 }
