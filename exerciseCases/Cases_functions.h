@@ -16,4 +16,5 @@ void DivingProblem();
 void QsortFunIsUsed(); 
 void YanghuiTriangle();
 void YanghuiTriangle_Recursion(); 
-void DiveRanking();
+void DiveRanking(); 
+void FindsNumberYoungTableau();

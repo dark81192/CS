@@ -15,5 +15,11 @@ void Check_sys()
 	else
 		printf("Big-end storage\n");
 
+	int arr[5][5];
+	int(*p1)[4];
+	p1 = arr;
+
+	printf("%p, %d\n", &p1[4][2] - &arr[4][2], &p1[4][2] - &arr[4][2]);
+
 	return;
 }

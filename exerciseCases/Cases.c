@@ -20,6 +20,7 @@ void menu()
 	printf("14. YanghuiTriangle(Ñî»ÔÈý½Ç)\n");
 	printf("15. YanghuiTriangle(Recursion)(Ñî»ÔÈý½Ç)\n");
 	printf("16. Dive Ranking Question(ÌøË®ÅÅÃû)\n");
+	printf("17. Finds a number from the Young Tableau(Time complexityO(1))\n");
 	printf(">");
 }
 
@@ -31,15 +32,15 @@ int main()
 
 	scanf_s("%d", &o);
 
-	int (*parr[17])() = { NULL, reverser, Check_sys, FFO, SumOfSn,
-						PointerPrintArray,NarcissisticNumber,
-						PrintDiamond,SodaProblem,OddEvenSort,
-						PascalTriangle,Killer,DivingProblem,
-						QsortFunIsUsed,YanghuiTriangle,YanghuiTriangle_Recursion,
-						DiveRanking
+	int (*parr[18])() = { NULL, reverser, Check_sys, FFO, SumOfSn,
+						PointerPrintArray, NarcissisticNumber,
+						PrintDiamond, SodaProblem, OddEvenSort,
+						PascalTriangle, Killer, DivingProblem,
+						QsortFunIsUsed, YanghuiTriangle, YanghuiTriangle_Recursion,
+						DiveRanking, FindsNumberYoungTableau
 						};
 
-	if(o > 0 && o < 17)
+	if(o > 0 && o <= 18)
 		parr[o]();
 
 	return 0;
