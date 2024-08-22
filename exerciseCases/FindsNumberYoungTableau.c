@@ -19,7 +19,11 @@ void FindsNumberYoungTableau()
 
 	for (i = 0; i < row - 1; i++)
 	{
-		if (arr[i][right - 1] == target)
+		if (i >= row || right < 0)
+		{
+			printf("Err\n");
+		}
+		else if (arr[i][right - 1] == target)
 		{
 			printf("arr[%d][%d]\n", i, right - 1);
 		}
