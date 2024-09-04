@@ -1,5 +1,7 @@
 #pragma once
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 void reverser();
 void Check_sys();
@@ -17,4 +19,5 @@ void QsortFunIsUsed();
 void YanghuiTriangle();
 void YanghuiTriangle_Recursion(); 
 void DiveRanking(); 
-void FindsNumberYoungTableau();
+void FindsNumberYoungTableau(); 
+void StrLeftRotation();
