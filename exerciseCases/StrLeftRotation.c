@@ -157,7 +157,7 @@ void StrLeftRotation()
 
 	printf("0.StrLeftRotation_func_demo\n");
 	printf("1.Judging_func_demo\n");
-	printf("2.Judging_func_demo1(strstr + strcat realize)\n");
+	printf("2.Judging_func_demo1(strstr + strcat realize)\n->");
 	scanf("%d", &option);
 
 	while (1)
