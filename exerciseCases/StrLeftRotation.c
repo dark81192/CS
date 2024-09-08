@@ -60,9 +60,9 @@ int Judging_func(char* str, char* str1)
 	for (i = 0; i < k; i++)
 	{
 		int j = 0;
-		int result = strcmp(str, str1);
+		int ret = strcmp(str, str1);
 
-		if (result == 0)
+		if (ret == 0)
 		{
 			return 0;
 		}
@@ -97,8 +97,47 @@ void Judging(char* str, char* str1)
 			break;
 		}
 	}
-	int result = Judging_func(str, str1);
-	if (result == 0)
+	int ret = Judging_func(str, str1);
+	if (ret == 0)
+	{
+		printf("str1 is equal to str2\n");
+	}
+	else
+	{
+		printf("str1 is not equal to str2\n");
+	}
+}
+
+int Judging1_func(char* str, char* str1)
+{
+	strncat(str, str, strlen(str));
+	char* ret = strstr(str, str1);
+
+	return ret == NULL;
+}
+
+void Judging1(char* str, char* str1)
+{
+	while (1)
+	{
+		printf("Please enter the str1:");
+		scanf("%s", *(&str));
+		printf("Please enter the str2:");
+		scanf("%s", *(&str1));
+
+		if (strlen(str) != strlen(str1))
+		{
+			printf("len err\n");
+		}
+		else
+		{
+			break;
+		}
+	}
+
+	int ret = Judging1_func(str, str1);
+
+	if (ret == 0)
 	{
 		printf("str1 is equal to str2\n");
 	}
@@ -110,18 +149,20 @@ void Judging(char* str, char* str1)
 
 void StrLeftRotation()
 {
-	char str[] = { "ABCDEFG" };
-	char str1[] = { "ABCDEFG" };
+	char str[20] = { "ABCDEFG" };
+	char str1[20] = { "ABCDEFG" };
 	int option = 0;
 
-	void (*op[2])() = {StrLeftRotation_func, Judging};
+	void (*op[3])() = {StrLeftRotation_func, Judging, Judging1};
 
-	printf("0.StrLeftRotation_func_demo\n1.Judging_func_demo\n");
+	printf("0.StrLeftRotation_func_demo\n");
+	printf("1.Judging_func_demo\n");
+	printf("2.Judging_func_demo1(strstr + strcat realize)\n");
 	scanf("%d", &option);
 
 	while (1)
 	{
-		if (option >= 0 && option < 2)
+		if (option >= 0 && option < 3)
 		{
 			op[option](str, str1);
 			break;
