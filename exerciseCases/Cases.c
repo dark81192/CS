@@ -45,6 +45,8 @@ int main()
 
 		if (o > 0 && o <= 19)
 			parr[o]();
+		else if (o == 0)
+			return 0;
 
 		system("pause");
 		system("cls");
