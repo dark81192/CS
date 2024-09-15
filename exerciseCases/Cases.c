@@ -22,6 +22,8 @@ void menu()
 	printf("16. Dive Ranking Question(ÌøË®ÅÅÃû)\n");
 	printf("17. Finds a number from the Young Tableau(O(1))\n");
 	printf("18. Str left rotation(Traversal + Three-step flip)\n");
+	printf("19. My strlen(Recursion)\n");
+	printf(" 0. EXIT\n");
 	printf(">");
 }
 
@@ -35,15 +37,15 @@ int main()
 
 		scanf_s("%d", &o);
 
-		int (*parr[19])() = { NULL, reverser, Check_sys, FFO, SumOfSn,
+		int (*parr[])() = { NULL, reverser, Check_sys, FFO, SumOfSn,
 							PointerPrintArray, NarcissisticNumber,
 							PrintDiamond, SodaProblem, OddEvenSort,
 							PascalTriangle, Killer, DivingProblem,
 							QsortFunIsUsed, YanghuiTriangle, YanghuiTriangle_Recursion,
-							DiveRanking, FindsNumberYoungTableau, StrLeftRotation
+							DiveRanking, FindsNumberYoungTableau, StrLeftRotation, myStrlen
 		};
 
-		if (o > 0 && o <= 19)
+		if (o > 0 && o <= 20)
 			parr[o]();
 		else if (o == 0)
 			return 0;

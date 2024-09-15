@@ -2,8 +2,8 @@
 
 void reverser_func(char* strl, char* strr)
 {
-	assert(strl);
-	assert(strr);
+	assert(strl != NULL);
+	assert(strr != NULL);
 	while (strl <= strr)
 	{
 		char tmp = 0;

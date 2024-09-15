@@ -25,7 +25,7 @@ int qsort_str_age(const void* e1, const void* e2)
 
 int qsort_str_name(const void* e1, const void* e2)
 {
-	return strcmp((((struct stu*)e1)->name), (((struct stu*)e2)->name));
+	return strcmp((((struct stu*)e1) -> name), (((struct stu*)e2) -> name));
 }
 
 void print_int(int* arr, int sz)

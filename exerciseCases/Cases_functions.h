@@ -21,4 +21,5 @@ void YanghuiTriangle();
 void YanghuiTriangle_Recursion(); 
 void DiveRanking(); 
 void FindsNumberYoungTableau(); 
-void StrLeftRotation();
+void StrLeftRotation(); 
+void myStrlen();
