@@ -22,39 +22,45 @@ void myStringUniversalScanf(char* str)
 	scanf("%s", str);
 }
 
-void myStrcpyFunc(char* strDestination, const char* strSource)
+char* myStrcpyFunc(char* strDestination, const char* strSource)
 {
-	assert(strSource != '\0');
+	char* ret = strDestination;
+
+	assert(strSource && strDestination);
 	
-	while (*strSource != '\0')
+	while (*strSource)
 	{
 		*strDestination++ = *strSource++;
 	}
 	*strDestination = *strSource;
+
+	return ret;
 }
 
-void myStrcatFunc(char* strDestination, const char* strSource)
+char* myStrcatFunc(char* strDestination, const char* strSource)
 {
-	assert(strSource != '\0');
+	char* ret =  strDestination;
 
-	while (*strDestination++ != '\0');
+	assert(strSource && strDestination);
 
-	while (*strSource != '\0')
+	while (*strDestination++);
+
+	while (*strSource)
 	{
 		*(strDestination++ - 1) = *strSource++;
 	}
 
 	*(strDestination - 1) = *strSource;
+
+	return ret;
 }
 
 void myStrlen()
 {
 	char str[20] = " ";
-	int len = 0;
 
 	myStringUniversalScanf(str);
-	len = myStrlenFunc(str);
-	printf("This string has %d numbers.\n", len);
+	printf("This string has %d numbers.\n", myStrlenFunc(str));
 }
 
 void myStrcpy()
@@ -63,10 +69,8 @@ void myStrcpy()
 	char str1[20] = { 0 };
 
 	myStringUniversalScanf(str);
-	myStrcpyFunc(str1, str);
-	
 	printf("str = %s\n", str);
-	printf("str1 = %s\n", str1);
+	printf("str1 = %s\n", myStrcpyFunc(str1, str));
 }
 
 void myStrcat()
@@ -78,6 +82,5 @@ void myStrcat()
 	myStringUniversalScanf(str);
 	printf("strSource:\n");
 	myStringUniversalScanf(str1);
-	myStrcatFunc(str, str1);
-	printf("str = %s\n", str);
+	printf("str = %s\n", myStrcatFunc(str, str1));
 }

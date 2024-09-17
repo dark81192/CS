@@ -24,6 +24,7 @@ void menu()
 	printf("18. Str left rotation(Traversal + Three-step flip)\n");
 	printf("19. My strlen(Recursion)\n");
 	printf("20. My strcpy\n");
+	printf("21. My strcat\n");
 	printf(" 0. EXIT\n");
 	printf(">");
 }
