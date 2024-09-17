@@ -46,10 +46,10 @@ int main()
 							PascalTriangle, Killer, DivingProblem,
 							QsortFunIsUsed, YanghuiTriangle, YanghuiTriangle_Recursion,
 							DiveRanking, FindsNumberYoungTableau, StrLeftRotation, myStrlen,
-							myStrcpy
+							myStrcpy, myStrcat
 		};
 
-		if (o > 0 && o <= 20)
+		if (o > 0 && o <= 21)
 			parr[o]();
 		else if (o == 0)
 			return 0;

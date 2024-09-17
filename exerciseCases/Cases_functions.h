@@ -24,3 +24,4 @@ void FindsNumberYoungTableau();
 void StrLeftRotation(); 
 void myStrlen();
 void myStrcpy();
+void myStrcat();
