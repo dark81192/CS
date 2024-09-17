@@ -23,15 +23,18 @@ void menu()
 	printf("17. Finds a number from the Young Tableau(O(1))\n");
 	printf("18. Str left rotation(Traversal + Three-step flip)\n");
 	printf("19. My strlen(Recursion)\n");
+	printf("20. My strcpy\n");
 	printf(" 0. EXIT\n");
 	printf(">");
 }
 
 int main()
 {
+	int o = 0;
+
 	while (1)
 	{
-		int o = 0;
+		o = 0;
 
 		menu();
 
@@ -42,13 +45,16 @@ int main()
 							PrintDiamond, SodaProblem, OddEvenSort,
 							PascalTriangle, Killer, DivingProblem,
 							QsortFunIsUsed, YanghuiTriangle, YanghuiTriangle_Recursion,
-							DiveRanking, FindsNumberYoungTableau, StrLeftRotation, myStrlen
+							DiveRanking, FindsNumberYoungTableau, StrLeftRotation, myStrlen,
+							myStrcpy
 		};
 
 		if (o > 0 && o <= 20)
 			parr[o]();
 		else if (o == 0)
 			return 0;
+		else
+			printf("enter error\n");
 
 		system("pause");
 		system("cls");

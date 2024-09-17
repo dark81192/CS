@@ -23,3 +23,4 @@ void DiveRanking();
 void FindsNumberYoungTableau(); 
 void StrLeftRotation(); 
 void myStrlen();
+void myStrcpy();
