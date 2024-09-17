@@ -25,6 +25,7 @@ void menu()
 	printf("19. My strlen(Recursion)\n");
 	printf("20. My strcpy\n");
 	printf("21. My strcat\n");
+	printf("22. My strcmp\n");
 	printf(" 0. EXIT\n");
 	printf(">");
 }
@@ -47,10 +48,10 @@ int main()
 							PascalTriangle, Killer, DivingProblem,
 							QsortFunIsUsed, YanghuiTriangle, YanghuiTriangle_Recursion,
 							DiveRanking, FindsNumberYoungTableau, StrLeftRotation, myStrlen,
-							myStrcpy, myStrcat
+							myStrcpy, myStrcat, myStrcmp
 		};
 
-		if (o > 0 && o <= 21)
+		if (o > 0 && o <= 23)
 			parr[o]();
 		else if (o == 0)
 			return 0;

@@ -55,6 +55,15 @@ char* myStrcatFunc(char* strDestination, const char* strSource)
 	return ret;
 }
 
+int myStrcmpFunc(const char* str1, const char* str2)
+{
+	assert(str1 && str2);
+
+	while (*str1++ == *str2++ && *str1 != '\0' && *str2 != '\0');
+
+	return *str1 - *str2;
+}
+
 void myStrlen()
 {
 	char str[20] = " ";
@@ -83,4 +92,31 @@ void myStrcat()
 	printf("strSource:\n");
 	myStringUniversalScanf(str1);
 	printf("str = %s\n", myStrcatFunc(str, str1));
+}
+
+void myStrcmp()
+{
+	char str[20] = { 0 };
+	char str1[20] = { 0 };
+	char tmp[20] = { 0 };
+
+	printf("str1:\n");
+	myStringUniversalScanf(str);
+	printf("str2:\n");
+	myStringUniversalScanf(str1);
+	
+	if (myStrcmpFunc(str, str1) > 0)
+	{
+		myStrcpyFunc(tmp, "greater than");
+	}
+	else if (myStrcmpFunc(str, str1) < 0)
+	{
+		myStrcpyFunc(tmp, "less than");
+	}
+	else
+	{
+		myStrcpyFunc(tmp, "equal to");
+	}
+
+	printf("String 1 is %s string 2\n", tmp);
 }

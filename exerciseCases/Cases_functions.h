@@ -25,3 +25,4 @@ void StrLeftRotation();
 void myStrlen();
 void myStrcpy();
 void myStrcat();
+void myStrcmp();
