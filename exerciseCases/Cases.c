@@ -26,6 +26,7 @@ void menu()
 	printf("20. My strcpy\n");
 	printf("21. My strcat\n");
 	printf("22. My strcmp\n");
+	printf("23. My strncpy\n");
 	printf(" 0. EXIT\n");
 	printf(">");
 }
@@ -48,7 +49,7 @@ int main()
 							PascalTriangle, Killer, DivingProblem,
 							QsortFunIsUsed, YanghuiTriangle, YanghuiTriangle_Recursion,
 							DiveRanking, FindsNumberYoungTableau, StrLeftRotation, myStrlen,
-							myStrcpy, myStrcat, myStrcmp
+							myStrcpy, myStrcat, myStrcmp, myStrncpy
 		};
 
 		if (o > 0 && o <= 23)

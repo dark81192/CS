@@ -68,6 +68,20 @@ int myStrcmpFunc(const char* str1, const char* str2)
 	return *str1 - *str2;
 }
 
+char* myStrncpyFunc(char* strDestination, const char* strSource, int sz_num)
+{
+	assert(strDestination && strSource);
+
+	char* tmp = strDestination;
+
+	while (sz_num--)
+	{
+		*strDestination++ = *strSource++;
+	}
+
+	return tmp;
+}
+
 void myStrlen()
 {
 	char str[20] = " ";
@@ -123,4 +137,19 @@ void myStrcmp()
 	}
 
 	printf("String 1 is %s string 2\n", tmp);
+}
+
+void myStrncpy()
+{
+	char str[20] = { 0 };
+	char str1[20] = { 0 };
+	int sz_num = 0;
+
+	printf("str1:\n");
+	myStringUniversalScanf(str);
+	printf("str2:\n");
+	myStringUniversalScanf(str1);
+	printf("sz_num:>");
+	scanf("%d", &sz_num);
+	printf("%s\n", myStrncpyFunc(str, str1, sz_num));
 }
