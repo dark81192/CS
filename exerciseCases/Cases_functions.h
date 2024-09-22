@@ -27,3 +27,4 @@ void myStrcpy();
 void myStrcat();
 void myStrcmp();
 void myStrncpy();
+void myStrstr();

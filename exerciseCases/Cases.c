@@ -22,11 +22,12 @@ void menu()
 	printf("16. Dive Ranking Question(ÌøË®ÅÅÃû)\n");
 	printf("17. Finds a number from the Young Tableau(O(1))\n");
 	printf("18. Str left rotation(Traversal + Three-step flip)\n");
-	printf("19. My strlen(Recursion)\n");
-	printf("20. My strcpy\n");
-	printf("21. My strcat\n");
-	printf("22. My strcmp\n");
-	printf("23. My strncpy\n");
+	printf("19. My Strlen(Recursion)\n");
+	printf("20. My Strcpy\n");
+	printf("21. My Strcat\n");
+	printf("22. My Strcmp\n");
+	printf("23. My Strncpy\n");
+	printf("24. My Strstr\n");
 	printf(" 0. EXIT\n");
 	printf(">");
 }
@@ -49,10 +50,10 @@ int main()
 							PascalTriangle, Killer, DivingProblem,
 							QsortFunIsUsed, YanghuiTriangle, YanghuiTriangle_Recursion,
 							DiveRanking, FindsNumberYoungTableau, StrLeftRotation, myStrlen,
-							myStrcpy, myStrcat, myStrcmp, myStrncpy
+							myStrcpy, myStrcat, myStrcmp, myStrncpy, myStrstr
 		};
 
-		if (o > 0 && o <= 23)
+		if (o > 0 && o <= 24)
 			parr[o]();
 		else if (o == 0)
 			return 0;

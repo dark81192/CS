@@ -82,6 +82,43 @@ char* myStrncpyFunc(char* strDestination, const char* strSource, int sz_num)
 	return tmp;
 }
 
+char* myStrstrFunc(const char* string, const char* strCharSet)
+{
+	assert(string && strCharSet);
+
+	char* tmp = NULL;
+
+	while (*string && *strCharSet)
+	{
+		while (*string != '\0' && * string != *strCharSet)
+		{
+			string++;
+		}
+
+		if (*string == '\0')
+		{
+			return tmp;
+		}
+		
+		tmp = string;
+
+		while (*string == *strCharSet)
+		{
+			string++;
+			strCharSet++;
+		}
+		
+		if (*strCharSet == '\0')
+		{
+			return tmp;
+		}
+
+		tmp = NULL;
+	}
+
+	return tmp;
+}
+
 void myStrlen()
 {
 	char str[20] = " ";
@@ -152,4 +189,27 @@ void myStrncpy()
 	printf("sz_num:>");
 	scanf("%d", &sz_num);
 	printf("%s\n", myStrncpyFunc(str, str1, sz_num));
+}
+
+void myStrstr()
+{
+	char str1[20] = { 0 };
+	char str2[20] = { 0 };
+
+	printf("str1:\n");
+	myStringUniversalScanf(str1);
+	printf("str2:\n");
+	myStringUniversalScanf(str2);
+
+	char* pdest = myStrstrFunc(str1, str2);
+
+	if (pdest != NULL)
+	{
+		int result = pdest - str1 + 1;
+		printf("%s found at position %d\n", str2, result);
+	}
+	else
+	{
+		printf("%s not found\n", str2);
+	}
 }
