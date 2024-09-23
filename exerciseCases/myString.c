@@ -86,37 +86,29 @@ char* myStrstrFunc(const char* string, const char* strCharSet)
 {
 	assert(string && strCharSet);
 
-	char* tmp = NULL;
+	char* str1 = NULL;
+	char* str2 = NULL;
 
-	while (*string && *strCharSet)
+	while (*string)
 	{
-		while (*string != '\0' && * string != *strCharSet)
+		str1 = string;
+		str2 = strCharSet;
+
+		while (*string && *str2 && (*string == *str2))
 		{
 			string++;
+			str2++;
 		}
 
-		if (*string == '\0')
+		if (*str2 == '\0')
 		{
-			return tmp;
-		}
-		
-		tmp = string;
-
-		while (*string == *strCharSet)
-		{
-			string++;
-			strCharSet++;
-		}
-		
-		if (*strCharSet == '\0')
-		{
-			return tmp;
+			return str1;
 		}
 
-		tmp = NULL;
+		string++;
 	}
 
-	return tmp;
+	return NULL;
 }
 
 void myStrlen()
