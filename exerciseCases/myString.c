@@ -111,6 +111,42 @@ char* myStrstrFunc(const char* string, const char* strCharSet)
 	return NULL;
 }
 
+char* myStrtokFunc(char* strToken, const char* strDelimit)
+{
+	assert(strDelimit);
+
+	char* tmp = strDelimit;
+	static char* cp = NULL;
+
+	if (cp != NULL)
+		strToken = cp;
+	
+	char* result = strToken;
+
+	while (strToken != NULL && *strToken)
+	{
+		while (*tmp)
+		{
+			if (*tmp++ == *strToken)
+			{
+				*strToken = '\0';
+				cp = strToken + 1;
+				return result;
+			}
+		}
+
+		if (*(++strToken) == '\0')
+		{
+			cp = NULL;
+			return result;
+		}
+
+		tmp = strDelimit;
+	}
+
+	return cp = NULL;
+}
+
 void myStrlen()
 {
 	char str[20] = " ";
@@ -203,5 +239,24 @@ void myStrstr()
 	else
 	{
 		printf("%s not found\n", str2);
+	}
+}
+
+void myStrtok()
+{
+	char str1[30] = { 0 };
+	char str2[30] = { 0 };
+	char Delimit[30] = { 0 };
+	char* tmp = NULL;
+
+	printf("strToken:\n");
+	myStringUniversalScanf(str2);
+	printf("strDelimit:\n");
+	myStringUniversalScanf(Delimit);
+	myStrcpyFunc(str1, str2);
+
+	for (tmp = myStrtokFunc(str1, Delimit); tmp != NULL; tmp = myStrtokFunc(NULL, Delimit))
+	{
+		printf("%s ", tmp);
 	}
 }

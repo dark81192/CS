@@ -28,3 +28,4 @@ void myStrcat();
 void myStrcmp();
 void myStrncpy();
 void myStrstr();
+void myStrtok();

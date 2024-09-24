@@ -28,7 +28,8 @@ void menu()
 	printf("22. My Strcmp\n");
 	printf("23. My Strncpy\n");
 	printf("24. My Strstr\n");
-	printf(" 0. EXIT\n");
+	printf("25. My Strtok\n");
+	printf("ELSE EXIT\n");
 	printf(">");
 }
 
@@ -50,15 +51,13 @@ int main()
 							PascalTriangle, Killer, DivingProblem,
 							QsortFunIsUsed, YanghuiTriangle, YanghuiTriangle_Recursion,
 							DiveRanking, FindsNumberYoungTableau, StrLeftRotation, myStrlen,
-							myStrcpy, myStrcat, myStrcmp, myStrncpy, myStrstr
+							myStrcpy, myStrcat, myStrcmp, myStrncpy, myStrstr, myStrtok
 		};
 
-		if (o > 0 && o <= 24)
+		if (o > 0 && o <= 25)
 			parr[o]();
-		else if (o == 0)
-			return 0;
 		else
-			printf("enter error\n");
+			return 0;
 
 		system("pause");
 		system("cls");
