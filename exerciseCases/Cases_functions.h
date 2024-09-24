@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
+#include <errno.h>
 
 void reverser();
 void Check_sys();
@@ -29,3 +30,4 @@ void myStrcmp();
 void myStrncpy();
 void myStrstr();
 void myStrtok();
+void strerror_test();

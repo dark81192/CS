@@ -260,3 +260,17 @@ void myStrtok()
 		printf("%s ", tmp);
 	}
 }
+
+void strerror_test()
+{
+	FILE* pf = fopen("D:\\key.txt", "r");
+
+	if (pf == NULL)
+	{
+		printf("%s", strerror(errno));
+		return;
+	}
+
+	fclose(pf);
+	pf = NULL;
+}
