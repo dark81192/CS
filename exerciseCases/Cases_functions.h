@@ -30,4 +30,5 @@ void myStrcmp();
 void myStrncpy();
 void myStrstr();
 void myStrtok();
-void strerror_test();
+void strerror_test(); 
+void perror_test();

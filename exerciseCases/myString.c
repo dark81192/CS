@@ -274,3 +274,17 @@ void strerror_test()
 	fclose(pf);
 	pf = NULL;
 }
+
+void perror_test()
+{
+	FILE* pf = fopen("D:\\key1.txt", "r");
+
+	if (pf == NULL)
+	{
+		perror("fopen");
+		return;
+	}
+
+	fclose(pf);
+	pf = NULL;
+}
