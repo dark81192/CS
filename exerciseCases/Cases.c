@@ -31,6 +31,7 @@ void menu()
 	printf("25. My Strtok\n");
 	printf("26. strerror test\n");
 	printf("27. perror test\n");
+	printf("28. myMemoryOperationFunctionCases\n");
 	printf("ELSE EXIT\n");
 	printf(">");
 }
@@ -53,10 +54,11 @@ int main()
 							PascalTriangle, Killer, DivingProblem,
 							QsortFunIsUsed, YanghuiTriangle, YanghuiTriangle_Recursion,
 							DiveRanking, FindsNumberYoungTableau, StrLeftRotation, myStrlen,
-							myStrcpy, myStrcat, myStrcmp, myStrncpy, myStrstr, myStrtok, strerror_test, perror_test
+							myStrcpy, myStrcat, myStrcmp, myStrncpy, myStrstr, myStrtok, strerror_test,
+							perror_test, myMemoryOperationFunctionCases
 		};
 
-		if (o > 0 && o <= 27)
+		if (o > 0 && o <= 28)
 			parr[o]();
 		else
 			return 0;

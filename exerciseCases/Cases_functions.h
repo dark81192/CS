@@ -32,3 +32,4 @@ void myStrstr();
 void myStrtok();
 void strerror_test(); 
 void perror_test();
+void myMemoryOperationFunctionCases();
