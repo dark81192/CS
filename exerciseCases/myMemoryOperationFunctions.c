@@ -13,18 +13,32 @@ void myMemoryOperationFunctionCasesMenu()
 //	
 //}
 
-void myMemcpy(void* destination, const void* source, int width, int sz_num)
+//void myMemcpy(void* destination, const void* source, int width, int sz_num)
+//{
+//	assert(source && destination);
+//
+//	int i = 0;
+//
+//	for (i = 0; i < sz_num * width; i++)
+//	{
+//		*((char*)destination + i) = *((char*)source + i);
+//	}
+//
+//	return;
+//}
+
+void* myMemcpy(void* destination, const void* source, int sz_num)
 {
+	void* ret = destination;
+
 	assert(source && destination);
 
-	int i = 0;
-
-	for (i = 0; i < sz_num * width; i++)
+	for (sz_num; sz_num > 0; sz_num--)
 	{
-		*((char*)destination + i) = *((char*)source + i);
+		*((char*)destination)++ = *((char*)source)++;
 	}
 
-	return;
+	return ret;
 }
 
 void myMemcpyCase()
@@ -37,7 +51,8 @@ void myMemcpyCase()
 	//myMemoryOperationsFunctionCasesUniversal(arr1, sizeof(arr1)/sizeof(arr1[0]));
 	printf("please enter a nums£º\nexample: 1234567890\n:>");
 	scanf("%s", str);
-	printf("please enter a sz_num of digits to copy£º\n:>");
+	//printf("please enter a sz_num of digits to copy£º\n:>");
+	printf("please enter a sz_num of byte to copy£º\n:>");
 	scanf("%d", &sz_num);
 
 	int i = 0;
@@ -53,9 +68,11 @@ void myMemcpyCase()
 		arr1[i] = str[i] - '0';
 	}
 
-	myMemcpy(arr2, arr1, sizeof(arr1) / sizeof(arr1[0]), sz_num);
+	//myMemcpy(arr2, arr1, sizeof(arr1) / sizeof(arr1[0]), sz_num);
+	myMemcpy(arr2, arr1, sz_num);
 
-	for (i = 0; i < sz_num; i++)
+
+	for (i = 0; i < (sz_num / sizeof(arr2[0])); i++)
 	{
 		printf("%d", arr2[i]);
 	}
