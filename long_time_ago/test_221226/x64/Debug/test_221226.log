@@ -1,0 +1,9 @@
+﻿  test.c
+  test_001.c
+  test_002.c
+  test_003.c
+D:\clang\2022\CS\test_221226\test_003.c(5,9): warning C4101: “year”: 未引用的局部变量
+  test_004.c
+  test_005.c
+  正在生成代码...
+  test_221226.vcxproj -> D:\clang\2022\CS\test_221226\x64\Debug\test_221226.exe

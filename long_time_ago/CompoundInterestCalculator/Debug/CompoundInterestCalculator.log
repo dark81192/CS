@@ -1,0 +1,4 @@
+﻿  CICalc.c
+D:\clang\2022\CS\CompoundInterestCalculator\CICalc.c(34,12): warning C4476: "printf": 格式说明符中的类型字段字符“\n”未知
+D:\clang\2022\CS\CompoundInterestCalculator\CICalc.c(37,19): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+  CompoundInterestCalculator.vcxproj -> D:\clang\2022\CS\CompoundInterestCalculator\Debug\CompoundInterestCalculator.exe

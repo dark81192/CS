@@ -1,0 +1,5 @@
+﻿  GRNS.c
+D:\clang\2022\CS\GuessRandomNumbers_switch\GRNS.c(17,19): warning C4013: “rand”未定义；假设外部返回 int
+D:\clang\2022\CS\GuessRandomNumbers_switch\GRNS.c(36,7): warning C4013: “srand”未定义；假设外部返回 int
+D:\clang\2022\CS\GuessRandomNumbers_switch\GRNS.c(36,22): warning C4013: “time”未定义；假设外部返回 int
+  GuessRandomNumbers_switch.vcxproj -> D:\clang\2022\CS\GuessRandomNumbers_switch\Debug\GuessRandomNumbers_switch.exe
