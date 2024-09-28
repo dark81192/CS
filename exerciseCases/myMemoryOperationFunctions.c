@@ -5,6 +5,7 @@
 void myMemoryOperationFunctionCasesMenu()
 {
 	printf("1. myMemcpy\n");
+	printf("2. myMemmove\n");
 	printf("ELSE EXIT\n");
 }
 
@@ -80,6 +81,64 @@ void myMemcpyCase()
 	printf("\n");
 }
 
+void* myMemmove(void* dest, void* src, int sz_num)
+{
+	void* ret = src;
+
+	assert(dest && src);
+
+	if (src > dest)
+	{
+		while (sz_num--)
+		{
+			*((char*)dest)++ = *((char*)src)++;
+		}
+	}
+	else
+	{
+		while (sz_num--)
+		{
+			*((char*)dest + sz_num) = *((char*)src + sz_num);
+		}
+	}
+}
+
+void myMemmoveCase()
+{
+	char str[20] = { 0 };
+	int arr1[20] = { 0 };
+	int	sz_num = 0;
+
+	//myMemoryOperationsFunctionCasesUniversal(arr1, sizeof(arr1)/sizeof(arr1[0]));
+	printf("please enter a nums£º\nexample: 1234567890\n:>");
+	scanf("%s", str);
+	//printf("please enter a sz_num of digits to copy£º\n:>");
+	printf("Please enter sz_num of byte to move£º\n:>");
+	scanf("%d", &sz_num);
+
+	int i = 0;
+
+	for (i = 0; str[i]; i++)
+	{
+		if (isdigit(str[i] - '0'))
+		{
+			printf("str[%d]: %c is not a digit\n", i, str[i]);
+			return;
+		}
+
+		arr1[i] = str[i] - '0';
+	}
+
+	myMemmove(arr1 + 2, arr1, sz_num);
+
+	for (int j = 0; j < i; j++)
+	{
+		printf("%d", arr1[j]);
+	}
+
+	printf("\n");
+}
+
 void myMemoryOperationFunctionCases()
 {
 	myMemoryOperationFunctionCasesMenu();
@@ -89,9 +148,9 @@ void myMemoryOperationFunctionCases()
 	printf(":>");
 	scanf("%d", &option);
 
-	void (*pmemarr[])() = { NULL, myMemcpyCase };
+	void (*pmemarr[])() = { NULL, myMemcpyCase, myMemmoveCase };
 
-	if (option > 0 && option <= 1)
+	if (option > 0 && option <= 2)
 	{
 		pmemarr[option]();
 	}
