@@ -6,6 +6,7 @@ void myMemoryOperationFunctionCasesMenu()
 {
 	printf("1. myMemcpy\n");
 	printf("2. myMemmove\n");
+	printf("3. myMemcmp\n");
 	printf("ELSE EXIT\n");
 }
 
@@ -139,6 +140,36 @@ void myMemmoveCase()
 	printf("\n");
 }
 
+int myMemcmp(const void* ptr1, const void* ptr2, int sz_num)
+{
+	assert(ptr1 && ptr2);
+
+	while (sz_num--)
+	{
+		if (*((char*)ptr1 + sz_num) == *((char*)ptr2 + sz_num))
+		{
+			return 0;
+		}
+		else if (*((char*)ptr1 + sz_num) > *((char*)ptr2 + sz_num))
+		{
+			return 1;
+		}
+		else
+		{
+			return -1;
+		}
+	}
+}
+
+void myMemcmpCase()
+{
+	float arr1[] = { 1.0, 2.0, 3.0, 4.0 };
+	float arr2[] = { 1.0, 1.5 };
+
+	int ret = myMemcmp(arr1, arr2, 8);
+	printf("The first eight bytes are compared back %d\n", ret);
+}
+
 void myMemoryOperationFunctionCases()
 {
 	myMemoryOperationFunctionCasesMenu();
@@ -148,9 +179,9 @@ void myMemoryOperationFunctionCases()
 	printf(":>");
 	scanf("%d", &option);
 
-	void (*pmemarr[])() = { NULL, myMemcpyCase, myMemmoveCase };
+	void (*pmemarr[])() = { NULL, myMemcpyCase, myMemmoveCase, myMemcmpCase };
 
-	if (option > 0 && option <= 2)
+	if (option > 0 && option <= 3)
 	{
 		pmemarr[option]();
 	}
