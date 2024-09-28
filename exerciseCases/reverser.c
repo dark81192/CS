@@ -50,7 +50,7 @@ void reverser()
 	}*/
 
 	//The second method.
-	gets();
+	//gets();
 
 	char str[100] = { 0 };
 

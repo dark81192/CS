@@ -4,6 +4,7 @@
 #include <string.h>
 #include <assert.h>
 #include <errno.h>
+#include <ctype.h>
 
 void reverser();
 void Check_sys();
