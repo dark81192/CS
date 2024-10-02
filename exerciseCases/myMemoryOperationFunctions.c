@@ -7,6 +7,7 @@ void myMemoryOperationFunctionCasesMenu()
 	printf("1. myMemcpy\n");
 	printf("2. myMemmove\n");
 	printf("3. myMemcmp\n");
+	printf("4. myMemset\n");
 	printf("ELSE EXIT\n");
 }
 
@@ -161,6 +162,18 @@ int myMemcmp(const void* ptr1, const void* ptr2, int sz_num)
 	}
 }
 
+void* myMemset(void* ptr, int value, int sz_num)
+{
+	assert(ptr != NULL);
+
+	while (sz_num--)
+	{
+		*((char*)ptr + sz_num) = value;
+	}
+
+	return ptr;
+}
+
 void myMemcmpCase()
 {
 	float arr1[] = { 1.0, 2.0, 3.0, 4.0 };
@@ -168,6 +181,26 @@ void myMemcmpCase()
 
 	int ret = myMemcmp(arr1, arr2, 8);
 	printf("The first eight bytes are compared back %d\n", ret);
+}
+
+void myMemsetCase()
+{
+	int value = 0;
+	int num = 0;
+	int arr[20] = { 0 };
+
+	printf("Please enter the value to set:>");
+	scanf("%d", &value);
+	printf("Please enter the number of byte to set:>");
+	scanf("%d", &num);
+	
+	for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); i++)
+		printf("%d ", arr[i]);
+	printf("\n");
+	myMemset(arr, value, num);
+	for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); i++)
+		printf("%d ", arr[i]);
+	printf("\n");
 }
 
 void myMemoryOperationFunctionCases()
@@ -179,9 +212,9 @@ void myMemoryOperationFunctionCases()
 	printf(":>");
 	scanf("%d", &option);
 
-	void (*pmemarr[])() = { NULL, myMemcpyCase, myMemmoveCase, myMemcmpCase };
+	void (*pmemarr[])() = { NULL, myMemcpyCase, myMemmoveCase, myMemcmpCase, myMemsetCase };
 
-	if (option > 0 && option <= 3)
+	if (option > 0 && option <= 4)
 	{
 		pmemarr[option]();
 	}
