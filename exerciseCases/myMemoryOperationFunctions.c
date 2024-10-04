@@ -75,7 +75,7 @@ void myMemcpyCase()
 	myMemcpy(arr2, arr1, sz_num);
 
 
-	for (i = 0; i < (sz_num / sizeof(arr2[0])); i++)
+	for (i = 0; i < (sz_num / (int)(sizeof(arr2[0]))); i++)
 	{
 		printf("%d", arr2[i]);
 	}
@@ -85,7 +85,7 @@ void myMemcpyCase()
 
 void* myMemmove(void* dest, void* src, int sz_num)
 {
-	void* ret = src;
+	void* ret = dest;
 
 	assert(dest && src);
 
@@ -103,6 +103,8 @@ void* myMemmove(void* dest, void* src, int sz_num)
 			*((char*)dest + sz_num) = *((char*)src + sz_num);
 		}
 	}
+
+	return ret;
 }
 
 void myMemmoveCase()
@@ -160,6 +162,8 @@ int myMemcmp(const void* ptr1, const void* ptr2, int sz_num)
 			return -1;
 		}
 	}
+
+	return -2;
 }
 
 void* myMemset(void* ptr, int value, int sz_num)
