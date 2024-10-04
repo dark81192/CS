@@ -9,7 +9,7 @@
   $~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$模拟实现string头文件中的各类函数  
   $~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$模拟实现Ctype各类mem内存操作函数  
   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;用fopen进行files操作    
-  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;pragma pack()设置内存对齐大小  
+  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;pragma pack()，offsetof member output，And so on... 
   -------------- : ----------------------------------  
   printf_binaryDifferent : 异或等操作找二进制位不同  
   printf_binaryPosition  : 找二进制位中1的数量

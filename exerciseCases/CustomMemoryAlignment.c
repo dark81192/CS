@@ -38,8 +38,8 @@ struct s4
 
 void CustomMemoryAlignment()
 {
-	printf("pragma pack(2), Size of memory in bytes: %d\n", sizeof(struct s1));
-	printf("pragma pack(4), Size of memory in bytes: %d\n", sizeof(struct s2));
-	printf("pragma pack(8), Size of memory in bytes: %d\n", sizeof(struct s3));
-	printf("pragma pack(16), Size of memory in bytes: %d", sizeof(struct s4));
+	printf("pragma pack(2), Size of memory in bytes: %d, offset of the second member: %d\n", sizeof(struct s1), offsetof(struct s1, i));
+	printf("pragma pack(4), Size of memory in bytes: %d, offset of the second member: %d\n", sizeof(struct s2), offsetof(struct s2, i));
+	printf("pragma pack(8), Size of memory in bytes: %d, offset of the second member: %d\n", sizeof(struct s3), offsetof(struct s3, i));
+	printf("pragma pack(16), Size of memory in bytes: %d, offset of the second memebr: %d\n", sizeof(struct s4), offsetof(struct s4, i));
 }
