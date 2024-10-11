@@ -7,16 +7,17 @@
 //3. 查找联系人
 //4. 修改联系人
 //5. 排序通讯录
+//6. 打印通讯录
 
 void menu()
 {
-	printf("****************************************"); 
-	printf("*******         Contacts         *******");
-	printf("*******	1. Add		   2. Del    *******");
-	printf("******* 3. Search      4. Modify *******");
-	printf("******* 5. Sort        6. Print  *******");
-	printf("*******         0. Exit          *******");
-	printf("****************************************");
+	printf("****************************************\n"); 
+	printf("*******         Contacts         *******\n");
+	printf("*******	1. Add         2. Del    *******\n");
+	printf("******* 3. Search      4. Modify *******\n");
+	printf("******* 5. Sort        6. Print  *******\n");
+	printf("*******         0. Exit          *******\n");
+	printf("****************************************\n");
 }
 
 enum Option
@@ -37,7 +38,7 @@ int main()
 	//创建通讯录
 	Contacts con;
 
-	InitContacts(con);
+	InitContacts(&con);
 	
 	do
 	{

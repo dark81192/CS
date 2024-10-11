@@ -6,6 +6,9 @@
 #define MAX_ADDR 30
 #define MAX 1000
 
+#include <stdio.h>
+#include <memory.h>
+
 //定义联系人信息类型结构
 typedef struct PeoInfo
 {
@@ -22,3 +25,5 @@ typedef struct Contacts
 	PeoInfo data[MAX];		//定义单个通讯录大小
 	int sz;					//联系人有效个数
 } Contacts;
+
+void InitContacts(Contacts* con);
