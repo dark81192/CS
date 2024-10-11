@@ -1,6 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 
 #include "Cases_functions.h"
+#include <stddef.h>
 
 #pragma pack(2)
 struct s1
