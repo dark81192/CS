@@ -7,7 +7,7 @@
 #define MAX 1000
 
 #include <stdio.h>
-#include <memory.h>
+#include <string.h>
 
 //定义联系人信息类型结构
 typedef struct PeoInfo

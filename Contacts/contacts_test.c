@@ -50,6 +50,7 @@ int main()
 		switch (input)
 		{
 		case ADD:
+			AddContact(&con);
 			break;
 		case DEL:
 			break;
