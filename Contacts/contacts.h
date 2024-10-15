@@ -26,4 +26,14 @@ typedef struct Contacts
 	int sz;					//联系人有效个数
 } Contacts;
 
-void InitContacts(Contacts* con);
+//初始化通讯录
+void InitContacts(Contacts* pcon);
+
+//添加联系人信息
+void AddContact(Contacts* pcon);
+
+//删除联系人信息
+void DelContact(Contacts* pcon);
+
+//查找联系人信息
+int SearchContact(Contacts* pcon, char* ptr_name);

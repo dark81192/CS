@@ -40,9 +40,15 @@ int main()
 
 	InitContacts(&con);
 	
+	menu();
+
 	do
 	{
-		menu();
+		if (input != 0)
+		{
+			printf("\n****************************************\n\n");
+			menu();
+		}
 
 		printf("Please enter option:>");
 		scanf("%d", &input);
@@ -53,6 +59,7 @@ int main()
 			AddContact(&con);
 			break;
 		case DEL:
+			DelContact(&con);
 			break;
 		case SEARCH:
 			break;
