@@ -65,6 +65,7 @@ int main()
 			SearchContact(&con, NULL);
 			break;
 		case MODIFY:
+			ModifyContact(&con);
 			break;
 		case SORT:
 			break;

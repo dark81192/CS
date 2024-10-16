@@ -120,3 +120,54 @@ void DelContact(Contacts* pcon)
 		printf("\nPlease confirm the name of the contact person is correct!\n");
 	}
 }
+
+void ModifyContact(Contacts* pcon)
+{
+	assert(pcon);
+
+	if (pcon->sz == 0)
+	{
+		printf("\nThe contacts is empty£¡\n");
+	}
+	else
+	{
+		char name[MAX_NAME] = { 0 };
+		
+		PrintContacts(pcon);
+
+		printf("Please enter the name of the contacts you want to modify:>");
+		scanf("%s", name);
+
+		int pos = SearchContact(pcon, name);
+
+		if (pos >= 0)
+		{
+			printf("Please enter the contact name:>");
+			scanf("%s", pcon->data[pos].name);
+			printf("Please enter the gender of the contact:>");
+			scanf("%s", pcon->data[pos].sex);
+			printf("Please enter the age of the contact:>");
+			scanf("%d", &pcon->data[pos].age);
+			printf("Please enter the contact phone number:>");
+			scanf("%s", pcon->data[pos].tele);
+			printf("Please enter the contact address:>");
+			scanf("%s", pcon->data[pos].addr);
+			printf("\n%-4s\t%-4s\t%-3d\t%-12s\t%-20s\n",
+				pcon->data[pos].name,
+				pcon->data[pos].sex,
+				pcon->data[pos].age,
+				pcon->data[pos].tele,
+				pcon->data[pos].addr);
+			printf("\nModify Successfully!\n");
+
+			PrintContacts(pcon);
+
+			return;
+		}
+		else if (pos == -2)
+		{
+			printf("\nPlease confirm the name of the contact person is correct!\n");
+		}
+	}
+
+}
