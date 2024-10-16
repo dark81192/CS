@@ -4,7 +4,7 @@
 
 void PrintContacts(const Contacts* pcon)
 {
-	printf("%-4s\t%-4s\t%-3s\t%-12s\t%-20s\n", "Name", "Sex", "Age", "Phone Number", "Address");
+	printf("\n%-4s\t%-4s\t%-3s\t%-12s\t%-20s\n", "Name", "Sex", "Age", "Phone Number", "Address");
 
 	for (int i = 0; i < pcon->sz; i++)
 	{
@@ -27,7 +27,7 @@ void AddContact(Contacts* pcon)
 {
 	if (pcon->sz == MAX)
 	{
-		printf("This contacts is full\n");
+		printf("\nThis contacts is full\n");
 		return;
 	}
 
@@ -44,7 +44,7 @@ void AddContact(Contacts* pcon)
 
 	pcon->sz++;
 
-	printf("Successfully Added!\n");
+	printf("\nSuccessfully Added!\n");
 
 	PrintContacts(pcon);
 }
@@ -53,9 +53,9 @@ int SearchContact(const Contacts* pcon, char* ptr_name)
 {
 	char name[MAX_NAME] = { 0 };
 
-	if (pcon->sz)
+	if (pcon->sz == 0)
 	{
-		printf("The Contacts is empty!\n");
+		printf("\nThe Contacts is empty!\n");
 
 		return -1;
 	}
@@ -72,20 +72,26 @@ int SearchContact(const Contacts* pcon, char* ptr_name)
 		//if (strcmp(pcon->data[i].name, ptr_name) == 0 || strcmp(pcon->data[i].name, name) == 0)
 		if (strcmp(pcon->data[i].name, ptr_name) == 0)
 		{
+			printf("\n%-4s\t%-4s\t%-3d\t%-12s\t%-20s\n",
+				pcon->data[i].name,
+				pcon->data[i].sex,
+				pcon->data[i].age,
+				pcon->data[i].tele,
+				pcon->data[i].addr);
 			return i;
 		}
 	}
 
-	printf("No contact name was search!\n");
+	printf("\nNo contact name was search!\n");
 
 	return -2;
 }
 
 void DelContact(Contacts* pcon)
 {
-	if (pcon->sz)
+	if (pcon->sz == 0)
 	{
-		printf("The Contacts is empty!\n");
+		printf("\nThe Contacts is empty!\n");
 		return;
 	}
 
@@ -103,14 +109,14 @@ void DelContact(Contacts* pcon)
 			pcon->data[i] = pcon->data[i + 1];
 		}
 
-		printf("Delete the Contact successfully!\n");
-
-		PrintContacts(pcon);
+		printf("\nDelete the Contact successfully!\n");
 
 		pcon->sz--;
+
+		PrintContacts(pcon);
 	}
 	else if(pos == -2)
 	{
-		printf("Please confirm the name of the contact person is correct!\n");
+		printf("\nPlease confirm the name of the contact person is correct!\n");
 	}
 }

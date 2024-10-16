@@ -62,6 +62,7 @@ int main()
 			DelContact(&con);
 			break;
 		case SEARCH:
+			SearchContact(&con, NULL);
 			break;
 		case MODIFY:
 			break;
