@@ -13,11 +13,11 @@
 //定义联系人信息类型结构
 typedef struct PeoInfo
 {
-	char name[MAX_NAME];
-	char sex[MAX_SEX];
-	int age;
-	char tele[MAX_TELE];
-	char addr[MAX_ADDR];
+	char name[MAX_NAME];	//20	0-19
+	char sex[MAX_SEX];		//20	20-39
+	int age;				//4     40-43
+	char tele[MAX_TELE];	//12	44-55
+	char addr[MAX_ADDR];	//30	55-87
 } PeoInfo;
 
 //通讯录
@@ -41,3 +41,9 @@ int SearchContact(Contacts* pcon, char* ptr_name);
 
 //修改联系人信息
 void ModifyContact(Contacts* pcon);
+
+//打印通讯录
+void PrintContacts(Contacts* pcon);
+
+//排序通讯录
+void SortContacts(Contacts* pcon);

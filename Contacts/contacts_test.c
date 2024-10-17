@@ -68,12 +68,16 @@ int main()
 			ModifyContact(&con);
 			break;
 		case SORT:
+			SortContacts(&con);
 			break;
 		case PRINT:
+			PrintContacts(&con);
 			break;
 		case EXIT:
+			printf("\nExit!\n");
 			break;
 		default:
+			printf("\nEnter Error!\n");
 			break;
 		}
 

@@ -128,11 +128,12 @@ void ModifyContact(Contacts* pcon)
 	if (pcon->sz == 0)
 	{
 		printf("\nThe contacts is empty£¡\n");
+		return;
 	}
 	else
 	{
 		char name[MAX_NAME] = { 0 };
-		
+
 		PrintContacts(pcon);
 
 		printf("Please enter the name of the contacts you want to modify:>");
@@ -169,5 +170,34 @@ void ModifyContact(Contacts* pcon)
 			printf("\nPlease confirm the name of the contact person is correct!\n");
 		}
 	}
+}
 
+void SortConatcts(Contacts* pcon)
+{
+	if (pcon->sz < 2)
+	{
+		printf("\nToo few contacts!\n");
+		return;
+	}
+	else
+	{
+		int item = 1;
+		
+		enum items
+		{
+			name,
+			sex,
+			age,
+			tele,
+			addr
+		};
+
+		int byte[] = {0, 20, 40, 44, 55};
+
+		printf("1.name 2.sex 3.age 4.telephone number 5.address\n");
+		printf("Please enter the items you want to sort(ascending):>");
+		scanf("%d", &item);
+
+		&pcon->data[0] + byte[item - 1];
+	}
 }
