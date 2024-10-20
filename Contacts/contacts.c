@@ -172,7 +172,7 @@ void ModifyContact(Contacts* pcon)
 	}
 }
 
-void SortConatcts(Contacts* pcon)
+void SortContacts(Contacts* pcon)
 {
 	if (pcon->sz < 2)
 	{
@@ -192,12 +192,111 @@ void SortConatcts(Contacts* pcon)
 			addr
 		};
 
-		int byte[] = {0, 20, 40, 44, 55};
+		//int byte[] = {0, 20, 40, 44, 55};
 
 		printf("1.name 2.sex 3.age 4.telephone number 5.address\n");
 		printf("Please enter the items you want to sort(ascending):>");
 		scanf("%d", &item);
 
-		&pcon->data[0] + byte[item - 1];
+		int i = 0;
+
+		//Contacts* pc = &pcon->data[i] + byte[item - 1];
+
+		switch (item - 1)
+		{
+		case name:
+			for (i = 0; i < pcon->sz - 1; i++)
+			{
+				int j = 0;
+				for (j = i; j < pcon->sz - 1; j++)
+				{
+					int ret = strcmp(pcon->data[j].name, pcon->data[j + 1].name);
+					if (ret > 0)
+					{
+						PeoInfo tmp;
+						tmp = pcon->data[j];
+						pcon->data[j] = pcon->data[j + 1];
+						pcon->data[j + 1] = tmp;
+					}
+				}
+			}
+			break;
+
+		case sex:
+			for (i = 0; i < pcon->sz - 1; i++)
+			{
+				int j = 0;
+				for (j = i; j < pcon->sz - 1; j++)
+				{
+					int ret = strcmp(pcon->data[j].sex, pcon->data[j + 1].sex);
+					if (ret > 0)
+					{
+						PeoInfo tmp;
+						tmp = pcon->data[j];
+						pcon->data[j] = pcon->data[j + 1];
+						pcon->data[j + 1] = tmp;
+					}
+				}
+			}
+			break;
+
+		case age:
+			for (i = 0; i < pcon->sz - 1; i++)
+			{
+				int j = 0;
+				for (j = i; j < pcon->sz - 1; j++)
+				{
+					int ret = strcmp(pcon->data[j].age, pcon->data[j + 1].age);
+					if (ret > 0)
+					{
+						PeoInfo tmp;
+						tmp = pcon->data[j];
+						pcon->data[j] = pcon->data[j + 1];
+						pcon->data[j + 1] = tmp;
+					}
+				}
+			}
+			break;
+
+		case tele:
+			for (i = 0; i < pcon->sz - 1; i++)
+			{
+				int j = 0;
+				for (j = i; j < pcon->sz - 1; j++)
+				{
+					int ret = strcmp(pcon->data[j].tele, pcon->data[j + 1].tele);
+					if (ret > 0)
+					{
+						PeoInfo tmp;
+						tmp = pcon->data[j];
+						pcon->data[j] = pcon->data[j + 1];
+						pcon->data[j + 1] = tmp;
+					}
+				}
+			}
+			break;
+
+		case addr:
+			for (i = 0; i < pcon->sz - 1; i++)
+			{
+				int j = 0;
+				for (j = i; j < pcon->sz - 1; j++)
+				{
+					int ret = strcmp(pcon->data[j].addr, pcon->data[j + 1].addr);
+					if (ret > 0)
+					{
+						PeoInfo tmp;
+						tmp = pcon->data[j];
+						pcon->data[j] = pcon->data[j + 1];
+						pcon->data[j + 1] = tmp;
+					}
+				}
+			}
+			break;
+		default:
+			break;
+		}
+
+		PrintContacts(pcon);
 	}
 }
