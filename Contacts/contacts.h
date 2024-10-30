@@ -5,10 +5,13 @@
 #define MAX_TELE 12
 #define MAX_ADDR 30
 #define MAX 1000
+#define INC 3
+#define DEFAULT_SZ 3
 
 #include <stdio.h>
 #include <string.h>
 #include <assert.h>
+#include <stdlib.h>
 
 //定义联系人信息类型结构
 typedef struct PeoInfo
@@ -23,8 +26,9 @@ typedef struct PeoInfo
 //通讯录
 typedef struct Contacts
 {
-	PeoInfo data[MAX];		//定义单个通讯录大小
+	PeoInfo* data;		//定义单个通讯录大小
 	int sz;					//联系人有效个数
+	int capacity;
 } Contacts;
 
 //初始化通讯录
@@ -47,3 +51,6 @@ void PrintContacts(Contacts* pcon);
 
 //排序通讯录
 void SortContacts(Contacts* pcon);
+
+//释放通讯录
+void DestoryContacts(Contacts* pcon);

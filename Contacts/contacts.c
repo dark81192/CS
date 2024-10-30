@@ -20,15 +20,33 @@ void PrintContacts(const Contacts* pcon)
 void InitContacts(Contacts* pcon)
 {
 	pcon->sz = 0;
-	memset(pcon->data, 0, sizeof(pcon->data));
+	pcon->data = (PeoInfo*)calloc(DEFAULT_SZ, sizeof(PeoInfo));
+
+	if (pcon->data == NULL)
+	{
+		perror("InitContacts");
+		return;
+	}
+
+	pcon->capacity = DEFAULT_SZ;
 }
 
 void AddContact(Contacts* pcon)
 {
-	if (pcon->sz == MAX)
+	if (pcon->sz == pcon->capacity)
 	{
-		printf("\nThis contacts is full\n");
-		return;
+		PeoInfo* ptr = (PeoInfo*)realloc(pcon->data, (pcon->capacity + INC) * sizeof(PeoInfo));
+
+		if (ptr != NULL)
+		{	
+			pcon->data = ptr;
+			pcon->capacity += INC;
+		}
+		else
+		{
+			perror("AddContact");
+			return;
+		}
 	}
 
 	printf("Please enter the contact name:>");
@@ -192,7 +210,7 @@ void SortContacts(Contacts* pcon)
 			addr
 		};
 
-		//int byte[] = {0, 20, 40, 44, 55};
+		int byte[] = {0, 20, 40, 44, 55};
 
 		printf("1.name 2.sex 3.age 4.telephone number 5.address\n");
 		printf("Please enter the items you want to sort(ascending):>");
@@ -210,7 +228,7 @@ void SortContacts(Contacts* pcon)
 				int j = 0;
 				for (j = i; j < pcon->sz - 1; j++)
 				{
-					int ret = strcmp(pcon->data[j].name, pcon->data[j + 1].name);
+					int ret = strcmp(&pcon->data[j] + byte[item - 1], &pcon->data[j + 1] + byte[item - 1]);
 					if (ret > 0)
 					{
 						PeoInfo tmp;
@@ -299,4 +317,12 @@ void SortContacts(Contacts* pcon)
 
 		PrintContacts(pcon);
 	}
+}
+
+void DestoryContacts(Contacts* pcon)
+{
+	free(pcon->data);
+	pcon->data = NULL;
+	pcon->sz = 0;
+	pcon->capacity = 0;
 }
