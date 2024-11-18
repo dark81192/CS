@@ -36,3 +36,29 @@ void xPattern()
 		printf("please enter the number of lines you want to paint(0 == exit):>");
 	}
 }
+
+void CivilServiceInterview()
+{
+	int score = 0;
+	int sum = 0;
+	int min = 100;
+	int max = 0;
+	int i = 0;
+
+	printf("please enter seven grades(separated by Spaces):>");
+
+	for (i = 0; i < 7; i++)
+	{
+		scanf("%d", &score);
+
+		sum += score;
+
+		if (score > max)
+			max = score;
+		
+		if (score < min)
+			min = score;
+	}
+
+	printf("%.2f\n", (sum - min - max) / 5.0);
+}
