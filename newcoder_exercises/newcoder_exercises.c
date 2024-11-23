@@ -62,3 +62,67 @@ void CivilServiceInterview()
 
 	printf("%.2f\n", (sum - min - max) / 5.0);
 }
+
+void TheOrderedSequenceInsertsAnInteger()
+{
+    int N = 0;
+    int i = 0;
+    int insert = 0;
+
+    scanf("%d", &N);
+
+    int* upSort = (int*)malloc(sizeof(int) * N);
+
+    for (i = 0; i < N; i++)
+    {
+        scanf("%d", &upSort[i]);
+    }
+
+    scanf("%d", &insert);
+
+    for (i = 0; i < N; i++)
+    {
+        if (*(upSort + i) > insert || *(upSort + i) == insert)
+        {
+            upSort = (int*)realloc(upSort, (N + 1) * sizeof(int));
+
+            int tmp = 0;
+
+            for (int j = i; j < N; j++)
+            {
+                if (j == i)
+                {
+                    int tmp1 = *(upSort + j);
+                    *(upSort + j) = insert;
+                    tmp = *(upSort + j + 1);
+                    *(upSort + j + 1) = tmp1;
+                    continue;
+                }
+                else
+                {
+                    int tmp1 = *(upSort + j + 1);
+                    *(upSort + j + 1) = tmp;
+                    tmp = tmp1;
+                }
+            }
+
+            i = N;
+        }
+        else if (i == N - 1)
+        {
+            upSort = (int*)realloc(upSort, (N + 1) * sizeof(int));
+
+            *(upSort + i + 1) = insert;
+
+            i = N;
+        }
+    }
+
+    for (i = 0; i < N + 1; i++)
+    {
+        printf("%d ", *(upSort + i));
+    }
+
+    free(upSort);
+    upSort = NULL;
+}

@@ -12,9 +12,9 @@ int main()
 	printf("please enter options:>");
 	scanf("%d", &option);
 
-	void (*exercises[])() = { NULL, xPattern, CivilServiceInterview };
+	void (*exercises[])() = { NULL, xPattern, CivilServiceInterview, TheOrderedSequenceInsertsAnInteger };
 
-	if (option >= 0 || option < 2)
+	if (option >= 0 || option < 3)
 	{
 		exercises[option]();
 	}

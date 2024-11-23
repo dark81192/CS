@@ -35,7 +35,7 @@ void AddContact(Contacts* pcon)
 {
 	if (pcon->sz == pcon->capacity)
 	{
-		PeoInfo* ptr = (PeoInfo*)realloc(pcon->data, (pcon->capacity + INC) * sizeof(PeoInfo));
+		PeoInfo* ptr = (PeoInfo*)realloc(pcon->data, pcon->capacity + INC * sizeof(PeoInfo));
 
 		if (ptr != NULL)
 		{	
