@@ -84,7 +84,16 @@ void TheOrderedSequenceInsertsAnInteger()
     {
         if (*(upSort + i) > insert || *(upSort + i) == insert)
         {
-            upSort = (int*)realloc(upSort, (N + 1) * sizeof(int));
+            int* ptr = (int*)realloc(upSort, (N + 1) * sizeof(int));
+
+            if (upSort == NULL)
+            {
+                perror("insert");
+            }
+            else
+            {
+                upSort = ptr;
+            }
 
             int tmp = 0;
 
@@ -110,7 +119,16 @@ void TheOrderedSequenceInsertsAnInteger()
         }
         else if (i == N - 1)
         {
-            upSort = (int*)realloc(upSort, (N + 1) * sizeof(int));
+            int* ptr = (int*)realloc(upSort, (N + 1) * sizeof(int));
+
+            if (upSort == NULL)
+            {
+                perror("insert");
+            }
+            else
+            {
+                upSort = ptr;
+            }
 
             *(upSort + i + 1) = insert;
 
