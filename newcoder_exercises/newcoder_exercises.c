@@ -1,6 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 
 #include <stdio.h>
+#include <stdlib.h>
 
 void xPattern()
 {
@@ -143,4 +144,37 @@ void TheOrderedSequenceInsertsAnInteger()
 
     free(upSort);
     upSort = NULL;
+}
+
+void GetDaysOfTheMonth()
+{
+    int a, b, o;
+
+    o = 1;
+
+    while (o != 0 && scanf("%d %d", &a, &b) != EOF)
+    {
+        if (b == 2)
+        {
+            if ((a % 4 == 0 && a % 100 != 0) || a % 400 == 0)
+            {
+                printf("29\n");
+            }
+            else
+            {
+                printf("28\n");
+            }
+        }
+        else if (b == 4 || b == 6 || b == 9 || b == 11)
+        {
+            printf("30\n");
+        }
+        else
+        {
+            printf("31\n");
+        }
+
+        printf("0 退出, 任意字母数字继续:>");
+        scanf("%d", &o);
+    }
 }
