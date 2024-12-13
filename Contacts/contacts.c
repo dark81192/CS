@@ -17,22 +17,68 @@ void PrintContacts(const Contacts* pcon)
 	}
 }
 
+void CheckCapacity(Contacts* pcon)
+{
+	if (pcon->sz == pcon->capacity)
+	{
+		PeoInfo* ptr = (PeoInfo*)realloc(pcon->data, (pcon->capacity + INC) * sizeof(PeoInfo));
+
+		if (ptr != NULL)
+		{
+			pcon->data = ptr;
+			pcon->capacity += INC;
+		}
+		else
+		{
+			perror("AddContact");
+			return;
+		}
+	}
+}
+
+void LoadContactsDat(Contacts* pcon)
+{
+	FILE* fp = fopen("Contacts.dat", "r");
+
+	if (fp == NULL)
+	{
+		perror("LoadContactsDat");
+		return;
+	}
+
+	PeoInfo tmp = { 0 };
+
+	while (fread(&tmp, sizeof(PeoInfo), 1, fp))
+	{
+		CheckCapacity(pcon);
+		pcon->data[pcon->sz] = tmp;
+		pcon->sz++;
+	}
+
+	fclose(fp);
+	fp = NULL;
+}
+
 void InitContacts(Contacts* pcon)
 {
 	pcon->sz = 0;
-	pcon->data = (PeoInfo*)calloc(DEFAULT_SZ, sizeof(PeoInfo));
+	pcon->data = (PeoInfo*)malloc(DEFAULT_SZ * sizeof(PeoInfo));
 
 	if (pcon->data == NULL)
 	{
 		perror("InitContacts");
 		return;
 	}
-
+	pcon->sz = 0;
 	pcon->capacity = DEFAULT_SZ;
+	
+	LoadContactsDat(pcon);
 }
 
 void AddContact(Contacts* pcon)
 {
+	gets();
+
 	if (pcon->sz == pcon->capacity)
 	{
 		PeoInfo* ptr = (PeoInfo*)realloc(pcon->data, pcon->capacity + INC * sizeof(PeoInfo));
@@ -317,6 +363,30 @@ void SortContacts(Contacts* pcon)
 
 		PrintContacts(pcon);
 	}
+}
+
+void SaveContacts(Contacts* pcon)
+{
+ 	if (pcon == NULL)
+	{
+		return;
+	}
+
+	FILE* ContactsDat = fopen("Contacts.dat", "w");
+
+	if (ContactsDat == NULL)
+	{
+		perror("fopen");
+		return;
+	}
+
+	for (int i = 0; i < pcon->sz; i++)
+	{
+		fwrite(pcon->data + i, sizeof(PeoInfo), 1, ContactsDat);
+	}
+
+	fclose(ContactsDat);
+	ContactsDat = NULL;
 }
 
 void DestoryContacts(Contacts* pcon)

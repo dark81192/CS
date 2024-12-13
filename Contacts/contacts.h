@@ -4,9 +4,9 @@
 #define MAX_SEX 20
 #define MAX_TELE 12
 #define MAX_ADDR 30
-#define MAX 1000
-#define INC 3
-#define DEFAULT_SZ 3
+#define MAX 1000	  //最大容量
+#define INC 3		  //每次扩容大小
+#define DEFAULT_SZ 3  //默认大小
 
 #include <stdio.h>
 #include <string.h>
@@ -52,5 +52,11 @@ void PrintContacts(Contacts* pcon);
 //排序通讯录
 void SortContacts(Contacts* pcon);
 
+//保存通讯录
+void SaveContacts(Contacts* pcon);
+
 //释放通讯录
 void DestoryContacts(Contacts* pcon);
+
+//检查通讯录容量
+void CheckCapacity(Contacts* pcon);

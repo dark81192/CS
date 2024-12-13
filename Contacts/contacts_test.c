@@ -74,6 +74,7 @@ int main()
 			PrintContacts(&con);
 			break;
 		case EXIT:
+			SaveContacts(&con);
 			DestoryContacts(&con);
 			printf("\nExit!\n");
 			break;
